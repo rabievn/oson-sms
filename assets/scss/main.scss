@@ -1,9 +1,11 @@
 @import "nullstyle";
 @import "vars";
+@import "mixins";
 
 :root {
   color-scheme: light;
-  font-size: 16px;
+  // font-size: 16px;
+  font-size: calc(0.415vw + 10px);
 }
 
 body {
