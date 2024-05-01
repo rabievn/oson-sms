@@ -1,6 +1,15 @@
-@import 'nullstyle';
-@import 'vars';
+@import "nullstyle";
+@import "vars";
+
+:root {
+  color-scheme: light;
+}
 
 body {
+  // color: light-dark($main-dark, white);
   color: $main-dark;
+}
+
+.working {
+  background: linear-gradient(#000, #fff);
 }
