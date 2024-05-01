@@ -36,6 +36,6 @@
     display: flex;
     flex-direction: column;
     flex: 0 1 16.667%;
-    padding: 2.5cqw 1.666cqw; //48px 32px 
+    padding: px-to-vw(48px) px-to-vw(32px) ; //48px 32px 
 }
 </style>
