@@ -3,13 +3,19 @@
 
 :root {
   color-scheme: light;
+  font-size: clamp(14px, calc(14px + (10px * (100vw - 1920px) / 720px)), 24px);
+
 }
 
 body {
   // color: light-dark($main-dark, white);
   color: $main-dark;
+  font-size: $font-md;
+  font-family: $font-family-main;
 }
 
-.working {
-  background: linear-gradient(#000, #fff);
+
+h1 {
+  font-size: $font-xl;
 }
+
