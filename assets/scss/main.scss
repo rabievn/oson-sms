@@ -5,7 +5,8 @@
 :root {
   color-scheme: light;
   // font-size: 16px;
-  font-size: calc(0.415vw + 10px);
+  // font-size: 0.8333vw;
+  font-size: clamp(14px, 0.8333vw, 18px);
 }
 
 body {
