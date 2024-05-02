@@ -8,16 +8,7 @@
 </template>
 
 <script setup>
-// definePageMeta(() => ({
-//     title: 'My Nuxt App',
-//     meta: [
-//         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-//         // ... другие метатеги
-//     ],
-//     link: [
-//         // ... ссылки
-//     ],
-// }));
+
 </script>
 
 <style lang="scss" scoped>
