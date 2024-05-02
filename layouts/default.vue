@@ -15,18 +15,19 @@
 .layout {
     display: flex;
     min-height: 100dvh;
-    min-width: 720px;
+    min-width: 700px;
     container: layout / inline-size;
+    background: $grey;
 }
 </style>
 
 <style lang="scss">
 .sidebar {
-    background: #999;
-
+    
+    background: $white;
     display: flex;
     flex-direction: column;
-    flex: 0 1 16.667%;
+    flex: 0 0 20rem;
     padding: px-to-vw(48px) px-to-vw(32px) ; //48px 32px 
 }
 </style>

@@ -1,23 +1,28 @@
-@import "nullstyle";
-@import "vars";
-@import "mixins";
+@import "_nullstyle";
+@import "_vars";
+@import "_mixins";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
   color-scheme: light;
   // font-size: 16px;
-  // font-size: 0.8333vw;
-  font-size: clamp(14px, 0.8333vw, 18px);
+  font-size: 0.8333vw;
+  // font-size: clamp(14px, 0.8333vw, 18px);
 }
 
 body {
   // color: light-dark($main-dark, white);
-  color: $main-dark;
+  color: $black;
   font-size: $font-md;
   font-family: $font-family-main;
+  font-weight: $fw-regular;
 }
 
 
 h1 {
   font-size: $font-xl;
+  font-weight: $fw-bold;
 }
 
