@@ -19,5 +19,6 @@ export default {}
 .layout__content {
   display: flex;
   justify-content: center;
+  margin-inline: 10px;
 }
 </style>

@@ -5,7 +5,7 @@
     </div>
     <form @click.prevent class="auth__form" action="">
       <Input type="text" placeholder="Логин"/>
-      <Input type="text" placeholder="Пароль"/>
+      <Input type="password" placeholder="Пароль"/>
       <Button>Войти</Button>
       <span class="auth__registrationLink">
         Нет аккаунта? <NuxtLink to="/register" class="">Зарегистрироваться</NuxtLink>
@@ -25,7 +25,7 @@ definePageMeta({
 
 <style lang="scss" scoped>
 .auth {
-  margin-top: 170px;
+  margin-top: 15dvh;
   width: 100%;
 
   &__logo {

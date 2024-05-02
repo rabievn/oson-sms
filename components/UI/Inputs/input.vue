@@ -1,25 +1,58 @@
 <template>
-  <input class="input" type="text">
+  <div class="input-field">
+    <input required="" name="text" type="text"/>
+    <label>Enter your email</label>
+  </div>
 </template>
 
+<script setup>
+const input = null;
+
+</script>
+
 <style lang="scss" scoped>
-.input {
-  height: 64px;
-  background: $light-grey;
-  padding-inline: 16px;
-  border-radius: 12px;
+.input-field {
+  position: relative;
   color: $blue-grey;
-  font-weight: $fw-regular;
-  outline: none;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: calc(100% - 32px); //  width - padding-inline
+  height: 64px;
+  background: transparent;
+  background: $light-grey;
+  border-radius: 12px;
   border: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  outline: none;
+  font-size: 16px;
+  padding-inline: 16px;
+  font-weight: $fw-semibold;
 
+  &:hover {
+    outline: 1px $main-dark solid;
+  }
 
-  &::placeholder {
-    color: $blue-grey;
+  &:focus {
+    background: $white;
+    color: $main-dark;
+    outline: 1px $main-dark solid;
   }
 }
 
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  font-size: $font-xsm;
+  top: 12px;
+  left: 16px;
+}
 </style>
