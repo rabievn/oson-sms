@@ -8,7 +8,7 @@
 :root {
   color-scheme: light;
   // font-size: 16px;
-  font-size: 0.8333vw;
+  font-size: clamp(10px, 0.8333vw, 18px);
   // font-size: clamp(14px, 0.8333vw, 18px);
 }
 

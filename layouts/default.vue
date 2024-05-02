@@ -18,6 +18,7 @@
     min-width: 700px;
     container: layout / inline-size;
     background: $grey;
+    overflow: auto;
 }
 </style>
 
@@ -29,5 +30,8 @@
     flex-direction: column;
     flex: 0 0 20rem;
     padding: px-to-vw(48px) px-to-vw(32px) ; //48px 32px 
+}
+.slot {
+    flex: 0 0 80rem;
 }
 </style>
