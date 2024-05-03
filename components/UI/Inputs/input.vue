@@ -70,13 +70,15 @@ const clearInput = () => {
     display: none;
     position: absolute;
     top: 50%;
-    right: 24px;
-    width: 24px;
-    height: 24px;
+    right: 10px;
     transform: translateY(-50%);
     background: transparent;
     cursor: pointer;
     outline: none;
+    span {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
