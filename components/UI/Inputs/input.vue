@@ -42,7 +42,7 @@ const clearInput = () => {
   }
 
   input {
-    width: calc(100% - 32px - 30px); // ширина - отступ справа для кнопки
+    width: calc(100% - 46px ); // ширина - отступ справа для кнопки
     height: calc(64px - 15px);
     background: transparent;
     background: $light-grey;
