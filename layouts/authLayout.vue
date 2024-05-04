@@ -1,7 +1,12 @@
 <template>
   <div class="layout">
     <div class="layout__content">
-      <slot/>
+      <div class="auth">
+        <div class="auth__logo">
+          <img src="@/assets/images/logo.svg" alt="">
+        </div>
+        <slot/>
+      </div>
     </div>
   </div>
 </template>
@@ -12,7 +17,7 @@ export default {}
 
 <style lang="scss" scoped>
 .layout {
-  max-width: 395px;
+  max-width: 394px;
   margin-inline: auto;
 }
 
@@ -20,5 +25,15 @@ export default {}
   display: flex;
   justify-content: center;
   margin-inline: 10px;
+}
+
+.auth {
+  margin-top: 15dvh;
+  width: 100%;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>

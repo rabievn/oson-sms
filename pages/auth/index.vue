@@ -1,17 +1,12 @@
 <template>
-  <div class="auth">
-    <div class="auth__logo">
-      <img src="../../assets/images/logo.svg" alt="Logo icon">
-    </div>
-    <form @click.prevent class="auth__form" action="">
-      <Input type="text" placeholder="Логин"/>
-      <Input type="password" placeholder="Пароль"/>
-      <Button>Войти</Button>
-      <span class="auth__registrationLink">
+  <form @click.prevent class="form" action="">
+    <Input type="text" placeholder="Логин"/>
+    <Input type="password" placeholder="Пароль"/>
+    <Button>Войти</Button>
+    <span class="form__registrationLink">
         Нет аккаунта? <NuxtLink to="/register" class="">Зарегистрироваться</NuxtLink>
       </span>
-    </form>
-  </div>
+  </form>
 </template>
 
 <script setup>
@@ -24,26 +19,17 @@ definePageMeta({
 </script>
 
 <style lang="scss" scoped>
-.auth {
-  margin-top: 15dvh;
-  width: 100%;
-
-  &__logo {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 51px;
-    gap: 16px;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 51px;
+  gap: 16px;
+  text-align: center;
+  color: $main-dark;
 
   &__registrationLink {
     font-size: $font-sm;
-    text-align: center;
-    color: $main-dark;
+
     a {
       text-decoration: underline;
       font-weight: $fw-semibold;
@@ -52,6 +38,5 @@ definePageMeta({
     }
   }
 }
-
 
 </style>
