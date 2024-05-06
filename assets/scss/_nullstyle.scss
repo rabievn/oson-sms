@@ -164,7 +164,16 @@ textarea {
   // outline: none;
   border:none;
 }
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+}
 
+select::-ms-expand {
+	display: none;
+}
 /**
 Remove the inheritance of text transform in Edge and Firefox.
 */

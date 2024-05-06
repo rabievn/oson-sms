@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-
 import Button from "~/components/UI/Buttons/Button/button.vue";
 
 const props = defineProps({
@@ -29,7 +28,6 @@ const clearInput = () => {
 .input-field {
   position: relative;
   color: $blue-grey;
-
 
   label {
     position: absolute;

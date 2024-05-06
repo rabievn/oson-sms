@@ -1,10 +1,10 @@
 <template>
-  <form @click.prevent class="form" action="">
+  <form @submit.prevent class="form" action="">
     <Input type="text" placeholder="Логин"/>
     <Input type="password" placeholder="Пароль"/>
     <Button>Войти</Button>
     <span class="form__registrationLink">
-        Нет аккаунта? <NuxtLink to="/register" class="">Зарегистрироваться</NuxtLink>
+        Нет аккаунта? <NuxtLink to="/register/phone-code" class="">Зарегистрироваться</NuxtLink>
       </span>
   </form>
 </template>
