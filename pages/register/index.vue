@@ -8,14 +8,14 @@
       <Input type="number" placeholder="+992(92) 707-1111"/>
       <Input type="text" placeholder="Название компании"/>
       <Input type="text" placeholder="SMS отправитель" v-model="sender"/>
-      <Select/>
+      <Select defaultOption="Частный предприниматель"/>
     </div>
     <div class="form__register">
       <Input type="text" placeholder="Логин"/>
       <Input type="password" placeholder="Пароль"/>
       <Input type="password" placeholder="Повторить пароль"/>
     </div>
-    <Button>Отправить код</Button>
+    <Button>Зарегистрироваться</Button>
   </form>
 </template>
 
@@ -39,12 +39,10 @@ const sender = ref('OsonSMS')
   gap: 24px;
   text-align: center;
   color: $main-dark;
-
-  font-size: $font-md;
   font-weight: $fw-medium;
-  text-wrap: balance;
 
   &__title {
+    font-size: $font-xl;
     font-weight: $fw-semibold;
     margin-top: 48px;
   }

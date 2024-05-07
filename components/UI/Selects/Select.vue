@@ -1,11 +1,13 @@
 <template>
   <select class="select">
-    <option selected disabled>Choose</option>
+    <option selected disabled>{{ defaultOption }}</option>
   </select>
 </template>
 
 <script setup>
-
+const props = defineProps({
+  defaultOption: String,
+});
 </script>
 
 <style lang="scss" scoped>
