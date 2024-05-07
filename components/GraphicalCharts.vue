@@ -6,13 +6,15 @@
         <template #main>
             <div class="charts">
                 <div>filter</div>
-                <div>charts</div>
+
+                <SMSCountChart />
             </div>
         </template>
     </card>
 </template>
 
 <script setup>
+import SMSCountChart from './charts/SMSCountChart.vue';
 
 </script>
 
