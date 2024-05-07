@@ -32,6 +32,7 @@
     padding: px-to-vw(48px) px-to-vw(32px) ; //48px 32px 
 }
 .slot {
-    flex: 0 0 80rem;
+    flex: 1 1 auto;
+    padding: 2rem;
 }
 </style>
