@@ -1,10 +1,10 @@
 <template>
-  <form @submit.prevent class="form" action="" @submit="$router.push('/')">
+  <form @submit.prevent="$router.push('/')" class="form">
     <Input type="text" placeholder="Логин"/>
     <Input type="password" placeholder="Пароль"/>
     <Button>Войти</Button>
     <span class="form__registrationLink">
-        Нет аккаунта? <NuxtLink to="/register/phone-code" class="">Зарегистрироваться</NuxtLink>
+       <span> Нет аккаунта?</span> <NuxtLink to="/register/phone-code" class="">Зарегистрироваться</NuxtLink>
       </span>
   </form>
 </template>
@@ -26,15 +26,20 @@ form {
   gap: 16px;
   text-align: center;
   color: $main-dark;
+}
 
-  &__registrationLink {
-    font-size: $font-sm;
+.form__registrationLink {
+  font-size: $font-sm;
+  color: #475467;
 
-    a {
-      text-decoration: underline;
-      font-weight: $fw-semibold;
+  a {
+    text-decoration: underline;
+    font-weight: $fw-semibold;
+    color: $main-dark;
+    cursor: pointer;
+
+    &:visited {
       color: $main-dark;
-      cursor: pointer;
     }
   }
 }

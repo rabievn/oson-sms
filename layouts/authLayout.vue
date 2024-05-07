@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="layout__content">
-      <div class="auth">
+      <div :class="authClass" class="auth">
         <div class="auth__logo">
           <img src="@/assets/images/logo.svg" alt="">
         </div>
@@ -13,6 +13,16 @@
 
 
 <script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const register = '/register';
+
+const authClass = computed(() => {
+  return {
+    'register': route.path === register
+  };
+});
 </script>
 
 <style lang="scss" scoped>
@@ -24,9 +34,7 @@
 .layout__content {
   display: flex;
   justify-content: center;
-  margin-inline: 10px;
 }
-
 .auth {
   margin-top: 15dvh;
   width: 100%;
@@ -35,5 +43,8 @@
     display: flex;
     justify-content: center;
   }
+}
+.register {
+  margin-top: 48px;
 }
 </style>
