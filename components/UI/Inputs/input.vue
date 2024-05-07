@@ -13,10 +13,11 @@ import Button from "~/components/UI/Buttons/Button/button.vue";
 
 const props = defineProps({
   placeholder: String,
-  type: String
+  type: String,
+  value: String
 });
 
-const input = ref('');
+const input = ref(props.value);
 
 const clearInput = () => {
   input.value = '';
@@ -40,7 +41,7 @@ const clearInput = () => {
   }
 
   input {
-    width: calc(100% - 46px ); // ширина - отступ справа для кнопки
+    width: calc(100% - 46px); // ширина - отступ справа для кнопки
     height: calc(64px - 15px);
     background: transparent;
     background: $light-grey;
@@ -73,6 +74,7 @@ const clearInput = () => {
     background: transparent;
     cursor: pointer;
     outline: none;
+
     span {
       width: 100%;
       height: 100%;
@@ -92,6 +94,7 @@ const clearInput = () => {
   align-items: center;
   justify-content: center;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

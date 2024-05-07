@@ -32,7 +32,7 @@ let sendCode = ref(false);
   flex-direction: column;
   gap: 16px;
   text-align: center;
-  color: $dark-grey;
+  color: $main-dark;
   margin-top: 4.72dvh;
   font-size: $font-md;
   font-weight: $fw-medium;

@@ -7,7 +7,7 @@
       <Input type="text" placeholder="ФИО"/>
       <Input type="number" placeholder="+992(92) 707-1111"/>
       <Input type="text" placeholder="Название компании"/>
-      <Input type="text" placeholder="SMS отправитель" v-model="sender"/>
+      <Input type="text" placeholder="SMS отправитель" value="OsonSMS"/>
       <Select defaultOption="Частный предприниматель"/>
     </div>
     <div class="form__register">
@@ -27,8 +27,6 @@ import Select from "~/components/UI/Selects/Select.vue";
 definePageMeta({
   layout: 'auth-layout'
 })
-
-const sender = ref('OsonSMS')
 
 </script>
 
