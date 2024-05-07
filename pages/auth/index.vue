@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent class="form" action="">
+  <form @submit.prevent class="form" action="" @submit="$router.push('/')">
     <Input type="text" placeholder="Логин"/>
     <Input type="password" placeholder="Пароль"/>
     <Button>Войти</Button>

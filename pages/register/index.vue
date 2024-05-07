@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent class="form">
+  <form @submit.prevent class="form" @submit="$router.push('/')">
     <div class="form__title">
       Регистрация
     </div>

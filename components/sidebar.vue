@@ -89,7 +89,7 @@ const routes = [
         icon: 'Buildings' 
     },
     {
-        path:'/exit',
+        path:'/auth',
         title: 'Выйти',
         icon: 'Power' 
     },
