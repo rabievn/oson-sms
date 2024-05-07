@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div :class="`card ${bordered ? 'bordered' : ''}`">
         <div class="card__header" v-if="$slots.header">
             <slot name="header" />
         </div>
@@ -13,13 +13,19 @@
 </template>
 
 <script setup>
-
+defineProps({
+    bordered: Boolean
+})
 </script>
 
 <style lang="scss">
 $border: 1px solid $grey;
 
 .card {
+    &.bordered {
+        border: $border;
+    }
+
     background: $white;
     border-radius: 1.25rem;
     padding: 2rem;
