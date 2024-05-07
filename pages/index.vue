@@ -1,53 +1,77 @@
 <template>
-    <div class="page">
-        <div class="page__content">
-            <graphical-charts />
-            <card>
-                <template #header>
-                    <h1>{{ 'Рассылки в Октябре' }}</h1>
-                </template>
-                <template #main>
-                    <ul class="mailing-list">
-                        <li><span class="mailing-list__date">10.12.2023 </span><span class="mailing-list__text">До
-                                17.10.2023 получите скидку -15% на все товары для мытья
-                                волос </span><span class="mailing-list__status status-pending">В процессе</span></li>
-                        <li><span class="mailing-list__date">09.12.2023 </span><span class="mailing-list__text">-20% на
-                                товары с красным ценником</span>
-                            <span class="mailing-list__status status-success">Завершена</span>
-                        </li>
-                        <li><span class="mailing-list__date">08.12.2023 </span><span class="mailing-list__text">Sed ut
-                                perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque laudantium, to</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                        <li><span class="mailing-list__date">07.12.2023 </span><span
-                                class="mailing-list__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id es</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                        <li><span class="mailing-list__date">08.11.2023 </span><span class="mailing-list__text">Ut enim
-                                ad minima veniam, quis nostrum exercitationem ullam
-                                corporis suscipit laboriosam, nisi ut al</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                        <li><span class="mailing-list__date">08.11.2023 </span><span class="mailing-list__text">Quis
-                                autem vel eum iure reprehenderit qui in ea voluptate
-                                velit esse quam nihil molestiae consequatu</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                        <li><span class="mailing-list__date">30.10.2023 </span><span class="mailing-list__text">Ut enim
-                                ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo con</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                        <li><span class="mailing-list__date">05.09.2023 </span><span class="mailing-list__text">Nemo
-                                enim ipsam voluptatem quia voluptas sit aspernatur aut
-                                odit aut fugit, sed quia consequuntur ma</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                        <li><span class="mailing-list__date">03.08.2023 </span><span class="mailing-list__text">Sed ut
-                                perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque laudantium, to</span> <span
-                                class="mailing-list__status status-success">Завершена</span></li>
-                    </ul>
-                </template>
-            </card>
-        </div>
-        <aside class="page__sidebar">
+    <WithAsideLayout>
+        <template #default>
+                <graphical-charts />
+                <card>
+                    <template #header>
+                        <h1>{{ "Рассылки в Октябре" }}</h1>
+                    </template>
+                    <template #main>
+                        <ul class="mailing-list">
+                            <li>
+                                <span class="mailing-list__date">10.12.2023 </span><span class="mailing-list__text">До
+                                    17.10.2023 получите скидку -15% на все товары для мытья
+                                    волос </span><span class="mailing-list__status status-pending">В процессе</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">09.12.2023 </span><span class="mailing-list__text">-20%
+                                    на
+                                    товары с красным ценником</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">08.12.2023 </span><span class="mailing-list__text">Sed
+                                    ut
+                                    perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium doloremque laudantium, to</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">07.12.2023 </span><span
+                                    class="mailing-list__text">Excepteur sint occaecat cupidatat non proident, sunt in
+                                    culpa
+                                    qui officia deserunt mollit anim id es</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">08.11.2023 </span><span class="mailing-list__text">Ut
+                                    enim
+                                    ad minima veniam, quis nostrum exercitationem ullam
+                                    corporis suscipit laboriosam, nisi ut al</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">08.11.2023 </span><span class="mailing-list__text">Quis
+                                    autem vel eum iure reprehenderit qui in ea voluptate velit
+                                    esse quam nihil molestiae consequatu</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">30.10.2023 </span><span class="mailing-list__text">Ut
+                                    enim
+                                    ad minim veniam, quis nostrud exercitation ullamco
+                                    laboris nisi ut aliquip ex ea commodo con</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">05.09.2023 </span><span class="mailing-list__text">Nemo
+                                    enim ipsam voluptatem quia voluptas sit aspernatur aut
+                                    odit aut fugit, sed quia consequuntur ma</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                            <li>
+                                <span class="mailing-list__date">03.08.2023 </span><span class="mailing-list__text">Sed
+                                    ut
+                                    perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium doloremque laudantium, to</span>
+                                <span class="mailing-list__status status-success">Завершена</span>
+                            </li>
+                        </ul>
+                    </template>
+                </card>
+        </template>
+
+        <template #aside>
             <card>
                 <template #header>
                     <h1>Системные шаблоны</h1>
@@ -70,50 +94,64 @@
                     </ul>
                 </template>
             </card>
-        </aside>
-    </div>
-    <!-- <button @click="increment">increment+</button> -->
+            <card>
+                <template #header>
+                    <h1>Платежи</h1>
+                </template>
+                <template #main>
+                    <ul class="payments-list">
+                        <li>
+                            <span class="payments-list__date">13.03.2023; 09:12 </span>
+                            <span class="payments-list__sum">200 c. </span>
+                        </li>
+                        <li>
+                            <span class="payments-list__date">13.03.2023; 09:12 </span>
+                            <span class="payments-list__sum">200 c. </span>
+                        </li>
+                        <li>
+                            <span class="payments-list__date">13.03.2023; 09:12 </span>
+                            <span class="payments-list__sum">200 c. </span>
+                        </li>
+                        <li>
+                            <span class="payments-list__date">13.03.2023; 09:12 </span>
+                            <span class="payments-list__sum">200 c. </span>
+                        </li>
+                        <li>
+                            <span class="payments-list__date">13.03.2023; 09:12 </span>
+                            <span class="payments-list__sum">200 c. </span>
+                        </li>
+                        <li>
+                            <span class="payments-list__date">13.03.2023; 09:12 </span>
+                            <span class="payments-list__sum">200 c. </span>
+                        </li>
+                    </ul>
+                </template>
+            </card>
+        </template>
+    </WithAsideLayout>
 </template>
-
 <script setup>
+import WithAsideLayout from '~/layouts/withAsideLayout.vue';
 
-const store = useMainStore()
+const store = useMainStore();
 
-const { text, count } = storeToRefs(store)
-const { increment } = store
-
+const { text, count } = storeToRefs(store);
+const { increment } = store;
 </script>
 
 <style lang="scss">
-.page {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    align-items: flex-start;
-
-    &__content {
-        flex: 1 1 63.3125%;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    &__sidebar {
-        flex: 0 1 30.6875%;
-    }
-
-    .layout-list {
+.layout-list {
         li:not(:last-child) {
             margin-bottom: 1rem;
         }
     }
 
     .mailing-list {
-        li:not(:last-child) {
-            margin-bottom: 1rem;
-        }
-
         li {
+            :not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
             display: flex;
             gap: 2rem;
             white-space: nowrap;
@@ -135,9 +173,24 @@ const { increment } = store
         .status-pending {
             color: $yellow;
         }
+
         .status-success {
             color: $green;
         }
     }
-}
+
+    .payments-list {
+        li {
+            :not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__sum {
+            margin-left: auto;
+        }
+    }
 </style>

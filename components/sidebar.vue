@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <aside>
         <div class="logo">
             <img src="@/assets/images/logo.svg" alt="">
         </div>
@@ -30,7 +30,7 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </aside>
 </template>
 
 <script setup>
@@ -39,59 +39,59 @@ import sideItem from './UI/Buttons/Button/sideItem.vue';
 
 const routes = [
     {
-        path:'/',
+        path: '/',
         title: 'Главная',
-        icon: 'HouseLine' 
+        icon: 'HouseLine'
     },
     {
-        path:'/clients',
+        path: '/clients',
         title: 'Клиенты',
-        icon: 'Users' 
+        icon: 'Users'
     },
     {
-        path:'/layouts',
+        path: '/layouts',
         title: 'Шаблоны рассылок',
-        icon: 'Star' 
+        icon: 'Star'
     },
     {
-        path:'/history',
+        path: '/history',
         title: 'История рассылок',
-        icon: 'Clock' 
+        icon: 'Clock'
     },
     {
-        path:'/sms',
+        path: '/sms',
         title: 'Детилизация SMS',
-        icon: 'EnvelopeOpen' 
+        icon: 'EnvelopeOpen'
     },
     {
-        path:'/charts',
+        path: '/charts',
         title: 'Графические отчеты',
-        icon: 'ChartPieSlice' 
+        icon: 'ChartPieSlice'
     },
     {
-        path:'/branches',
+        path: '/branches',
         title: 'Филлиалы',
-        icon: 'TreeStructure' 
+        icon: 'TreeStructure'
     },
     {
-        path:'/accounts',
+        path: '/accounts',
         title: 'Акты и счета',
-        icon: 'FileText' 
+        icon: 'FileText'
     },
     {
-        path:'/partner',
+        path: '/partner',
         title: 'Партнерская программа',
-        icon: 'Crown' 
+        icon: 'Crown'
     },
     {
-        path:'/company',
+        path: '/company',
         title: 'Компания',
-        icon: 'Buildings' 
+        icon: 'Buildings'
     },
     {
-        path:'/auth',
+        path: '/auth',
         title: 'Выйти',
-        icon: 'Power' 
+        icon: 'Power'
     },
 ]
 
@@ -132,13 +132,12 @@ const routes = [
 }
 
 .nav {
-    &__list{
+    &__list {
         display: flex;
         flex-direction: column;
         gap: 0.125rem;
     }
-    &__item {
 
-    }
+    &__item {}
 }
 </style>

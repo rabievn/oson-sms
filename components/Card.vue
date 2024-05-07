@@ -28,7 +28,7 @@ $border: 1px solid $grey;
 
     &__main {
         margin-top: 2rem;
-        padding: 2rem 0;
+        padding-top: 2rem;
         border-top: $border;
     }
 
