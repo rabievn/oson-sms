@@ -3,7 +3,7 @@
     <input required name="text" :type="type" v-model="input"/>
     <label>{{ placeholder }}</label>
     <button @click="clearInput" v-if="input !== ''">
-      <nuxt-icon name="Close" filled/>
+      <nuxt-icon name="reused/Close" filled/>
     </button>
   </div>
 </template>
@@ -74,11 +74,6 @@ const clearInput = () => {
     background: transparent;
     cursor: pointer;
     outline: none;
-
-    span {
-      width: 100%;
-      height: 100%;
-    }
   }
 }
 
@@ -93,16 +88,5 @@ const clearInput = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
 }
 </style>

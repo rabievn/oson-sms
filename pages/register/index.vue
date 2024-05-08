@@ -22,7 +22,7 @@
 <script setup>
 import Input from "~/components/UI/Inputs/input.vue";
 import Button from "~/components/UI/Buttons/Button/button.vue";
-import Select from "~/components/UI/Selects/Select.vue";
+import Select from "~/components/UI/Selects/select.vue";
 
 definePageMeta({
   layout: 'auth-layout'
