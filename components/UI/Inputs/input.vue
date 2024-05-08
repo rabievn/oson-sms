@@ -30,6 +30,7 @@ const clearInput = () => {
   position: relative;
   color: $blue-grey;
 
+
   label {
     position: absolute;
     top: 50%;
@@ -55,13 +56,13 @@ const clearInput = () => {
     font-weight: $fw-semibold;
 
     &:hover {
-      outline: 1px $main-dark solid;
+      border: 1px $main-dark solid;
     }
 
     &:focus {
       background: $white;
       color: $main-dark;
-      outline: 1px $main-dark solid;
+      border: 1px $main-dark solid;
     }
   }
 
@@ -88,5 +89,25 @@ const clearInput = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.danger {
+  input {
+    border: 1px $red solid;
+    background: rgba($red, 0.1);
+
+    &:hover {
+      border: 1px $red solid;
+    }
+
+    &:focus {
+      border: 1px $red solid;
+      background: rgba($red, 0.1);
+    }
+  }
+
+  label {
+    color: $red;
+  }
 }
 </style>
