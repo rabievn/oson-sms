@@ -2,7 +2,7 @@
     <WithAsideLayout>
         <template #default>
                 <graphical-charts />
-                <card>
+                <card class="mailing-card">
                     <template #header>
                         <h1>{{ "Рассылки в Октябре" }}</h1>
                     </template>
@@ -144,31 +144,35 @@ const { increment } = store;
         li:not(:last-child) {
             margin-bottom: 1rem;
         }
+        
     }
-
+    .mailing-card {}
+    
     .mailing-list {
         li {
             :not(:last-child) {
                 margin-bottom: 1rem;
             }
-
+            max-width: 100%;
             display: flex;
             gap: 2rem;
             white-space: nowrap;
-            justify-content: space-between;
+            // justify-content: space-between;
         }
 
         &__date {
-            flex: 0 0 10.65%;
+            // flex: 0 1 10.65%;
         }
 
         &__text {
             text-overflow: ellipsis;
+            max-width: 40.9375rem;
             overflow: hidden;
-            flex: 1 1 auto;
         }
 
-        &__status {}
+        &__status {
+            margin-left: auto;
+        }
 
         .status-pending {
             color: $yellow;

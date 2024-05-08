@@ -98,11 +98,11 @@ const routes = [
 </script>
 
 <style lang="scss" scoped>
-.logo {
-    & img {
-        width: 12rem; // 192px 
-    }
-}
+// .logo {
+//     & img {
+//         width: 12rem; // 192px 
+//     }
+// }
 
 .profile {
     margin: 2rem 0; // 32px 

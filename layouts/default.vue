@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 20rem;
-    padding: px-to-vw(48px) px-to-vw(32px) ; //48px 32px 
+    padding: 3rem 2rem ; //48px 32px 
 }
 .slot {
     flex: 1 1 auto;
