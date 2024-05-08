@@ -18,20 +18,19 @@
 <style lang="scss" scoped>
 .page {
     display: flex;
-    justify-content: space-between;
     gap: 2rem;
     align-items: flex-start;
     height: 100%;
 
     &__content {
-        flex: 1 1 63.3125%;
         display: flex;
+        flex: 0 0 63.3125rem;
         flex-direction: column;
         gap: 2rem;
     }
 
     &__sidebar {
-        flex: 0 1 30.6875%;
+        flex: 0 0 30.6875rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;

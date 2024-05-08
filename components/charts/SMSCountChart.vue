@@ -6,7 +6,7 @@
         <template #main>
             <ClientOnly>
                 <div class="chart-card__chart">
-                    <apexchart ref="chart" :id="'sms-count-chart'" :selected="2" :ref="chartRef" height="100%"
+                    <apexchart :id="'sms-count-chart'" height="100%"
                         :options="chartOptions" :series="series"
                         >
                     </apexchart>
@@ -23,15 +23,6 @@
 </template>
 
 <script setup>
-const chart = ref()
-onMounted(()=> {
-    
-    console.log(chart);
-    if(chart.value) {
-        chart.value.toggleDataPointSelection(1, 2)
-    }
-})
-
 
 const series = [{
     name: 'Количество',
