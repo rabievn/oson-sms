@@ -34,6 +34,7 @@ const authClass = computed(() => {
 .layout__content {
   display: flex;
   justify-content: center;
+  padding-inline: 10px;
 }
 .auth {
   margin-top: 15dvh;
