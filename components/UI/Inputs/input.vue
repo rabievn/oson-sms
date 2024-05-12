@@ -54,6 +54,7 @@ const clearInput = () => {
     padding-right: 30px;
     padding-top: 15px;
     font-weight: $fw-semibold;
+    color: $dark-blue;
 
     &:hover {
       border: 1px $main-dark solid;

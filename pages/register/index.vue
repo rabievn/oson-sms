@@ -8,7 +8,7 @@
       <Input type="number" placeholder="+992(92) 707-1111"/>
       <Input type="text" placeholder="Название компании"/>
       <Input type="text" placeholder="SMS отправитель" value="OsonSMS"/>
-      <Select defaultOption="Частный предприниматель"/>
+      <Select defaultOption="Частный предприниматель" :options="['Khujand']"/>
     </div>
     <div class="form__register">
       <Input type="text" placeholder="Логин"/>
@@ -38,6 +38,7 @@ definePageMeta({
   text-align: center;
   color: $main-dark;
   font-weight: $fw-medium;
+  padding-bottom: 20px;
 
   &__title {
     font-size: $font-xl;
