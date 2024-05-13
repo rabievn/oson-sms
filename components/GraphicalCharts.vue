@@ -8,6 +8,8 @@
                 <sms-count-chart class="charts_chart first-chart" :class="$route.path === '/' ? 'full-width' : ''" />
                 <pie-chart class="charts__chart pie-chart" :title="'SMS  по операторам'" :parts="operatorsChartData" />
                 <pie-chart class="charts__chart pie-chart" :title="'SMS  по статусам'" :parts="statusChartData" />
+                <pie-chart class="charts__chart pie-chart" :title="'По шлюзам'" :parts="gatewayChartData" v-if="$route.path === '/charts'" />
+                <year-comparison-chart class="charts__chart year-comparison-chart full-width " v-if="$route.path === '/charts'"/>
             </div>
         </template>
     </card>
@@ -16,6 +18,7 @@
 <script setup>
 import SmsCountChart from './charts/SmsCountChart.vue';
 import PieChart from './charts/PieChart.vue';
+import YearComparisonChart from './charts/YearComparisonChart.vue';
 
 const operatorsChartData = [
     {
@@ -58,6 +61,29 @@ const statusChartData = [
     }
 ]
 
+const gatewayChartData = [
+    {
+        label: 'Tcell',
+        series: 5000,
+        color: '#7B61FF'
+    },
+    {
+        label: 'Babilon',
+        series: 0,
+        color: '#EBC232'
+    },
+    {
+        label: 'МегаФон',
+        series: 0,
+        color: '#38B000'
+    },
+    {
+        label: 'ZetMobile',
+        series: 0,
+        color: '#F4943B'
+    },
+]
+
 //     labels: ['Tcell', 'Babilon'],
 //     colors: ['#7B61FF', '#EBC232'],
 //     values: [5000, 6000]
@@ -70,15 +96,17 @@ const statusChartData = [
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
-
+    
     &__chart {
-        max-width:100%;
+        max-width: 100%;
     }
 
     .full-width {
-        grid-area: 1 / 1 / 2 / 3;
+        grid-column: span 2;
     }
-    .pie-chart {
-    }
+
+    .pie-chart {}
+
+
 }
 </style>

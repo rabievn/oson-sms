@@ -6,9 +6,7 @@
         <template #main>
             <ClientOnly>
                 <div class="chart-card__chart">
-                    <apexchart :id="'sms-count-chart'" height="100%"
-                        :options="chartOptions" :series="series"
-                        >
+                    <apexchart :id="'sms-count-chart'" height="100%" :options="chartOptions" :series="series">
                     </apexchart>
                 </div>
             </ClientOnly>
@@ -35,7 +33,6 @@ const chartOptions = {
     chart: {
         id: 'sms-count-chart',
         type: 'bar',
-        height: '100px',
         toolbar: {
             show: false
         }
@@ -59,8 +56,8 @@ const chartOptions = {
             fontFamily: undefined
         }
     },
-    colors: [function ({dataPointIndex}) {
-        if (dataPointIndex === selectedSeriesIndex ) {
+    colors: [function ({ dataPointIndex }) {
+        if (dataPointIndex === selectedSeriesIndex) {
             return '#1B2559'
         } else {
             return '#EAEDF0'
@@ -81,7 +78,6 @@ const chartOptions = {
     grid: {
         show: false
     },
-    startingActiveSeries: 4, // Highlight the first bar
     states: {
         normal: {
             filter: {
@@ -142,8 +138,8 @@ const chartOptions = {
 <style lang="scss" scoped>
 .chart-card {
     &__chart {
-        height: 12.125rem;
-        max-height: 12.125rem;
+        height: 18.0625rem;
+        max-height: 18.0625rem;
         position: relative;
     }
 

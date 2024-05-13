@@ -9,7 +9,9 @@
                     <apexchart :width="'100%'" :options="chartOptions" :series="series"> </apexchart>
                     <div class="chart-data">
                         <div v-for="part in parts" :key="parts.name">
+                            <div  v-if="part.series > 0">
                             {{ part.label }} - {{ part.series }}
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -95,6 +97,8 @@ const chartOptions = {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 18.0625rem;
+    max-height: 18.0625rem;
 }
 
 .chart-data {
