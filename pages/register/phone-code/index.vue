@@ -10,21 +10,22 @@
     <div class="sendCode__text">
       SMS сообщение с кодом было успешно отправлено, введите код
     </div>
-    <!-- <Input type="number" placeholder="4421"/> -->
+     <Input v-model="code" type="number" placeholder="4421"/>
     <Button @click="$router.push('/register')">Проверить код</Button>
   </form>
 </template>
 
 <script setup>
-import Input from "~/components/UI/Inputs/input.vue";
-import Button from "~/components/UI/Buttons/Button/button.vue";
-
 definePageMeta({
   layout: 'auth-layout'
 })
+import Input from "~/components/UI/Inputs/input.vue";
+import Button from "~/components/UI/Buttons/Button/button.vue";
+
 let sendCode = ref(false);
 
 const phone = ref('')
+const code = ref('')
 
 </script>
 

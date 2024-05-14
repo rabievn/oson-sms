@@ -1,14 +1,14 @@
 <template>
   <div class="input-field">
     <ClientOnly>
-      <input v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)" :placeholder="placeholder" v-if="isPhone" />
-      <input :type="type" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" v-else />
+      <input required v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue"
+             @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone"/>
+      <input required :type="type" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" v-else/>
     </ClientOnly>
 
     <label>{{ placeholder }}</label>
-    <button @click="clearInput" v-if="input !== ''">
-      <nuxt-icon name="reused/Close" filled />
+    <button @click="clearInput" v-if="modelValue !== ''">
+      <nuxt-icon name="reused/Close" filled/>
     </button>
   </div>
 
@@ -24,11 +24,12 @@ const props = defineProps({
   isPhone: Boolean
 });
 
-const input = ref(props.value);
+const emit = defineEmits(['update:modelValue']);
 
 const clearInput = () => {
-  input.value = '';
-}
+  emit('update:modelValue', "");
+};
+
 </script>
 
 
@@ -86,8 +87,8 @@ const clearInput = () => {
   }
 }
 
-.input-field input:focus~label,
-.input-field input:valid~label {
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
   font-size: $font-xsm;
   top: 20px;
   left: 16px;

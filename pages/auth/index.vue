@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="$router.push('/')" class="form">
-    <Input type="text" placeholder="Логин"/>
-    <Input type="password" placeholder="Пароль"/>
+    <Input v-model="login" type="text" placeholder="Логин"/>
+    <Input v-model="password" type="password" placeholder="Пароль"/>
     <Button>Войти</Button>
     <span class="form__registrationLink">
        <span> Нет аккаунта?</span> <NuxtLink to="/register/phone-code" class="">Зарегистрироваться</NuxtLink>
@@ -10,12 +10,16 @@
 </template>
 
 <script setup>
-import Input from "~/components/UI/Inputs/input.vue";
-import Button from "~/components/UI/Buttons/Button/button.vue";
-
 definePageMeta({
   layout: 'auth-layout'
 })
+import Input from "~/components/UI/Inputs/input.vue";
+import Button from "~/components/UI/Buttons/Button/button.vue";
+
+
+const login = ref('');
+const password = ref('')
+
 </script>
 
 <style lang="scss" scoped>

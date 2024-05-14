@@ -4,29 +4,36 @@
       Регистрация
     </div>
     <div class="form__userInfo">
-      <Input type="text" placeholder="ФИО"/>
-      <Input type="number" placeholder="+992(92) 707-1111"/>
-      <Input type="text" placeholder="Название компании"/>
-      <Input type="text" placeholder="SMS отправитель" value="OsonSMS"/>
+      <Input v-model="name" type="text" placeholder="ФИО"/>
+      <Input v-model="phone" type="number" placeholder="+992(92) 707-1111"/>
+      <Input v-model="company" type="text" placeholder="Название компании"/>
+      <Input v-model="sender" type="text" placeholder="SMS отправитель" value="OsonSMS"/>
       <Select defaultOption="Частный предприниматель" :options="['Khujand']"/>
     </div>
     <div class="form__register">
-      <Input type="text" placeholder="Логин"/>
-      <Input type="password" placeholder="Пароль"/>
-      <Input type="password" placeholder="Повторить пароль"/>
+      <Input v-model="login" type="text" placeholder="Логин"/>
+      <Input v-model="password" type="password" placeholder="Пароль"/>
+      <Input v-model="repeatPassword" type="password" placeholder="Повторить пароль"/>
     </div>
     <Button>Зарегистрироваться</Button>
   </form>
 </template>
 
 <script setup>
+definePageMeta({
+  layout: 'auth-layout'
+})
 import Input from "~/components/UI/Inputs/input.vue";
 import Button from "~/components/UI/Buttons/Button/button.vue";
 import Select from "~/components/UI/Selects/select.vue";
 
-definePageMeta({
-  layout: 'auth-layout'
-})
+const name = ref('')
+const phone = ref('')
+const company = ref('')
+const sender = ref('')
+const login = ref('')
+const password = ref('')
+const repeatPassword = ref('')
 
 </script>
 
