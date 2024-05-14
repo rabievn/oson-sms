@@ -5,7 +5,7 @@
     </div>
     <div class="form__userInfo">
       <Input v-model="name" type="text" placeholder="ФИО"/>
-      <Input v-model="phone" type="number" placeholder="+992(92) 707-1111"/>
+      <Input v-model="phone" :type="text" type="number" placeholder="+992(92) 707-1111" :isPhone="true"/>
       <Input v-model="company" type="text" placeholder="Название компании"/>
       <Input v-model="sender" type="text" placeholder="SMS отправитель" value="OsonSMS"/>
       <Select defaultOption="Частный предприниматель" :options="['Khujand']"/>
