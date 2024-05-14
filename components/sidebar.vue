@@ -18,13 +18,13 @@
             <ul class="nav__list">
                 <li class="nav__item">
                     <green-button>
-                        <nuxt-icon name="EnvelopSimple" filled />
+                        <nuxt-icon name="sidebar/EnvelopSimple" filled />
                         Новая рассылка
                     </green-button>
                 </li>
                 <li class="nav__item" v-for="route in routes" :key="route.title">
                     <side-item :route="route">
-                        <nuxt-icon :name="route.icon" filled />
+                        <nuxt-icon :name="'sidebar/' + route.icon" filled />
                         {{ route.title }}
                     </side-item>
                 </li>
