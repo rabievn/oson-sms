@@ -1,18 +1,19 @@
 <template>
     <card class="chart-card" bordered>
         <template #header>
-            <h1>{{title}}</h1>
+            <h1>{{ title }}</h1>
         </template>
         <template #main>
             <ClientOnly>
                 <div class="chart-block">
-                    <apexchart :width="'100%'" :options="chartOptions" :series="series"> </apexchart>
+                    <apexchart :height="'100%'" :options="chartOptions" :series="series"> </apexchart>
                     <div class="chart-data">
                         <div v-for="part in parts" :key="parts.name">
-                            <div  v-if="part.series > 0">
-                            {{ part.label }} - {{ part.series }}
+                            <div v-if="part.series > 0">
+                                {{ part.label }} - {{ part.series }}
+                            </div>
                         </div>
-                        </div>
+                        <div class="fake"></div>
                     </div>
                 </div>
             </ClientOnly>
@@ -58,6 +59,9 @@ const chartOptions = {
     // sizes 
     plotOptions: {
         pie: {
+            expandOnClick: true,
+            offsetX: 0,
+            offsetY: 0,
             donut: {
                 size: '75%'
             }
@@ -91,14 +95,14 @@ const chartOptions = {
 // ];
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .chart-block {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 18.0625rem;
-    max-height: 18.0625rem;
+    max-height: 18.0625rem;   
 }
 
 .chart-data {
@@ -111,17 +115,24 @@ const chartOptions = {
     line-height: 1.2rem;
     font-size: $font-sm;
     color: $main-dark;
+
+    .fake {
+        height: 20px;
+        width: 100%;
+    }
+    
 }
 
 .chart-legend {
     display: flex;
     justify-content: center;
     gap: 1rem;
+
     &__item {
         display: flex;
         white-space: nowrap;
         align-items: center;
-        gap:0.5rem;
+        gap: 0.5rem;
     }
 
     &__dot {
@@ -131,4 +142,5 @@ const chartOptions = {
         border-radius: 50%;
     }
 }
+
 </style>
