@@ -1,11 +1,17 @@
 <template>
   <div class="input-field">
-    <input required name="text" :type="type" v-model="input"/>
+    <ClientOnly>
+      <input v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)" :placeholder="placeholder" v-if="isPhone" />
+      <input :type="type" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" v-else />
+    </ClientOnly>
+
     <label>{{ placeholder }}</label>
     <button @click="clearInput" v-if="input !== ''">
-      <nuxt-icon name="reused/Close" filled/>
+      <nuxt-icon name="reused/Close" filled />
     </button>
   </div>
+
 </template>
 
 <script setup>
@@ -14,7 +20,8 @@ import Button from "~/components/UI/Buttons/Button/button.vue";
 const props = defineProps({
   placeholder: String,
   type: String,
-  value: String
+  modelValue: String,
+  isPhone: Boolean
 });
 
 const input = ref(props.value);
@@ -79,8 +86,8 @@ const clearInput = () => {
   }
 }
 
-.input-field input:focus ~ label,
-.input-field input:valid ~ label {
+.input-field input:focus~label,
+.input-field input:valid~label {
   font-size: $font-xsm;
   top: 20px;
   left: 16px;

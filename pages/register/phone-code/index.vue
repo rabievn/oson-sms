@@ -3,14 +3,14 @@
     <div class="form__subtitle">
       Добро пожаловать в форму регистрации компании в сервисе по отправке SMS рассылки OsonSMS.
     </div>
-    <Input type="number" placeholder="Номер телефона"/>
+    <Input v-model="phone" :type="text" :placeholder="'Номер телефона'" :isPhone="true"/>
     <Button @click="sendCode = !sendCode">Отправить код</Button>
   </form>
   <form @submit.prevent v-show="sendCode" class=" sendCode">
     <div class="sendCode__text">
       SMS сообщение с кодом было успешно отправлено, введите код
     </div>
-    <Input type="number" placeholder="4421"/>
+    <!-- <Input type="number" placeholder="4421"/> -->
     <Button @click="$router.push('/register')">Проверить код</Button>
   </form>
 </template>
@@ -23,6 +23,8 @@ definePageMeta({
   layout: 'auth-layout'
 })
 let sendCode = ref(false);
+
+const phone = ref('')
 
 </script>
 

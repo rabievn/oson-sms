@@ -12,10 +12,12 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "apexcharts": "^3.49.0",
+    "maska": "^2.1.11",
     "nuxt": "^3.11.2",
     "nuxt-icons": "^3.2.1",
     "pinia": "^2.1.7",
     "sass": "^1.75.0",
+    "v-mask": "^2.3.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vue3-apexcharts": "^1.5.2"
