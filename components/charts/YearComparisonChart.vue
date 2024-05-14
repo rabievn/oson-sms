@@ -6,12 +6,18 @@
         <template #main>
             <div class="chart-card__chart-container">
                 <div class="chart-card__chart-filter">
-                    <select>
-                        <option value="2022" selected>2022</option>
-                    </select>
-                    <select>
-                        <option value="2023" selected>2023</option>
-                    </select>
+                    <div class="chart-select">
+                        <select>
+                            <option value="2022" selected>2022</option>
+                        </select>
+                        <nuxt-icon name="reused/Arrow" class="chart-select__icon" filled>x</nuxt-icon>
+                    </div>
+                    <div class="chart-select">
+                        <select>
+                            <option value="2023" selected>2023</option>
+                        </select>
+                        <nuxt-icon name="reused/Arrow" class="chart-select__icon" filled>x</nuxt-icon>
+                    </div>
                 </div>
                 <ClientOnly>
                     <div class="chart-card__chart">
@@ -23,8 +29,15 @@
         </template>
         <template #footer>
             <div class="chart-card__footer">
-                <span> {{ series[0].data[selectedSeriesIndex] }}</span>
-                <span> {{ series[1].data[selectedSeriesIndex] }}</span>
+                <div class="chart-card__data">
+                    <span class="chart-card__data-mark bg-grey"></span><span class="chart-card__data-text"> {{
+                        series[0].data[selectedSeriesIndex] }}</span>
+                </div>
+                <div class="chart-card__data">
+                    <span class="chart-card__data-mark bg-green"></span><span class="chart-card__data-text text-green"> {{
+                        series[1].data[selectedSeriesIndex] }}</span>
+                </div>
+
             </div>
         </template>
     </card>
@@ -107,6 +120,7 @@ const chartOptions = {
 </script>
 
 <style lang="scss" scoped>
+
 .chart-card {
     &__chart-container {
         background: #F9F9F9;
@@ -116,15 +130,7 @@ const chartOptions = {
 
     &__chart-filter {
         padding: 2rem 2rem 2rem 2rem;
-
-        select {
-            padding-inline: 1rem 2.5rem;
-            padding-block: 0.65625rem;
-            border-radius: 0.5rem;
-            margin-right: 0.5rem;
-            border: 2px solid $grey;
-        }
-
+        display: flex;
     }
 
     &__chart {
@@ -136,6 +142,61 @@ const chartOptions = {
     &__footer {
         display: flex;
         gap: 2rem;
+       
     }
+
+    &__data {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    &__data-mark {
+        width: 1.1875rem;
+        height: 1.1875rem;
+    }
+
+    &__data-text {
+        font-size: $font-sm;
+        font-weight: $fw-medium;
+        color: $secondary-black;
+    }
+}
+
+.chart-select {
+    position: relative;
+    
+    &:nth-of-type(2) {
+        color: $green;
+    }
+
+    & select {
+        padding-inline: 1rem 2.5rem;
+        padding-block: 0.65625rem;
+        border-radius: 0.5rem;
+        margin-right: 0.5rem;
+        border: 2px solid $grey;
+        background-color: #fff;
+        color: inherit;
+    }
+
+    &__icon {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        top: calc(50% - 0.5rem);
+        right: 1.2rem;
+        pointer-events: none;
+    }
+}
+
+.bg-green {
+    background-color: $green;
+}
+.bg-grey {
+    background-color: $secondary-black;
+}
+.text-green {
+    color: $green;
 }
 </style>

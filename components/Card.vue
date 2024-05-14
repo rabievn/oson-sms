@@ -36,6 +36,7 @@ $border: 1px solid $grey;
         margin-top: 2rem;
         padding-top: 2rem;
         border-top: $border;
+        padding-bottom: 2rem;
     }
 
     &__footer {
