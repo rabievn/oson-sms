@@ -30,13 +30,14 @@ $border: 1px solid $grey;
     border-radius: 1.25rem;
     padding: 2rem;
 
-    &__header {}
+    &__header {
+     @include flexBetween;
+    }
 
     &__main {
-        margin-top: 2rem;
-        padding-top: 2rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
         border-top: $border;
-        padding-bottom: 2rem;
     }
 
     &__footer {

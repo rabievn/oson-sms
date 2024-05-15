@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import Button from "~/components/UI/Buttons/Button/button.vue";
+import Button from "~/components/UI/Buttons/button.vue";
 
 const props = defineProps({
   placeholder: String,
@@ -95,9 +95,7 @@ const clearInput = () => {
 }
 
 .input-field:focus-within button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ @include flexCenter;
 }
 
 .danger {

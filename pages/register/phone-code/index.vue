@@ -20,7 +20,7 @@ definePageMeta({
   layout: 'auth-layout'
 })
 import Input from "~/components/UI/Inputs/input.vue";
-import Button from "~/components/UI/Buttons/Button/button.vue";
+import Button from "~/components/UI/Buttons/button.vue";
 
 let sendCode = ref(false);
 

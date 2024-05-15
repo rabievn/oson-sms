@@ -34,8 +34,8 @@
 </template>
 
 <script setup>
-import greenButton from './UI/Buttons/Button/greenButton.vue';
-import sideItem from './UI/Buttons/Button/sideItem.vue';
+import greenButton from './UI/Buttons/greenButton.vue';
+import sideItem from './UI/Buttons/sideItem.vue';
 
 const routes = [
     {
