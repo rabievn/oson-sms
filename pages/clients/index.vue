@@ -7,7 +7,9 @@
           <h1>Клиенты</h1>
         </template>
         <template #main>
-          123
+          <div>
+            <Search placeholder="имя, номер телефона"/>
+          </div>
         </template>
       </card>
     </template>
@@ -16,9 +18,10 @@
       <card>
         <template #header>
           <h1>Группы</h1>
-          <div>
-            123
-          </div>
+          <action-button class="aside__actionButton">
+            <nuxt-icon name="clients/PlusCircle"/>
+            Создать группу
+          </action-button>
         </template>
         <template #main>
           <ul>
@@ -56,6 +59,8 @@
 
 <script setup>
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
+import ActionButton from "~/components/UI/Buttons/actionButton.vue";
+import Search from "~/components/UI/Searches/Search.vue";
 
 </script>
 
@@ -65,5 +70,11 @@ import WithAsideLayout from "~/layouts/withAsideLayout.vue";
   width: 100%;
   height: 40px;
   color: $secondary-black;
+}
+
+.aside__actionButton {
+  color: $main-dark;
+  font-weight: $fw-regular;
+  font-size: $font-sm;
 }
 </style>
