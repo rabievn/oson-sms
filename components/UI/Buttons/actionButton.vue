@@ -20,13 +20,16 @@
   background: $white;
   font-size: $font-sm;
   font-weight: $fw-medium;
+  outline-offset: -2px;
   &:disabled {
     background: $grey;
     color: $dark-grey;
+    outline-offset: 0;
   }
   &:hover:not(:disabled) {
     background: $back;
     outline: 1px solid $grey;
+    outline-offset: 0;
   }
   &:active:not(:disabled) {
     background: $grey;
