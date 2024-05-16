@@ -55,8 +55,6 @@ const clearInput = () => {
     background: transparent;
     background: $light-grey;
     border-radius: 12px;
-    border: none;
-    outline: none;
     font-size: $font-md;
     padding-left: 16px;
     padding-right: 30px;
@@ -95,7 +93,7 @@ const clearInput = () => {
 }
 
 .input-field:focus-within button {
- @include flexCenter;
+  @include flexCenter;
 }
 
 .danger {
