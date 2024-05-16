@@ -17,10 +17,10 @@
             <action-button>
               <nuxt-icon name="clients/UserPlus"/>
             </action-button>
-            <action-button class="greyBackground">
+            <action-button disabled>
               <nuxt-icon name="clients/Trash"/>
             </action-button>
-            <action-button class="greyBackground">
+            <action-button disabled>
               <nuxt-icon name="clients/UsersThree"/>
             </action-button>
           </div>
