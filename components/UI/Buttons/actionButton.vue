@@ -24,11 +24,11 @@
     background: $grey;
     color: $dark-grey;
   }
-  &:hover {
+  &:hover:not(:disabled) {
     background: $back;
     outline: 1px solid $grey;
   }
-  &:active {
+  &:active:not(:disabled) {
     background: $grey;
     outline: 1px solid $grey;
   }
