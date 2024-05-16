@@ -51,14 +51,14 @@ const clearInput = () => {
 
   input {
     width: 100%;
-    height: 64px;
+    height: 4rem;
     background: transparent;
     background: $light-grey;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     font-size: $font-md;
-    padding-left: 16px;
-    padding-right: 30px;
-    padding-top: 15px;
+    padding-left: 1rem;
+    padding-right: 1.875rem;
+    padding-top: 0.9375rem;
     font-weight: $fw-semibold;
     color: $dark-blue;
 
@@ -77,7 +77,7 @@ const clearInput = () => {
     display: none;
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 0.625rem;
     transform: translateY(-50%);
     background: transparent;
     cursor: pointer;
@@ -88,8 +88,8 @@ const clearInput = () => {
 .input-field input:focus ~ label,
 .input-field input:valid ~ label {
   font-size: $font-xsm;
-  top: 20px;
-  left: 16px;
+  top: 1.25rem;
+  left: 1rem;
 }
 
 .input-field:focus-within button {

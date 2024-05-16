@@ -19,7 +19,6 @@ defineProps({
 </script>
 
 <style lang="scss">
-$border: 1px solid $grey;
 
 .card {
     &.bordered {
