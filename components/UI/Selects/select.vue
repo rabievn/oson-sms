@@ -1,14 +1,14 @@
 <template>
   <div class="select">
-    <div class="select__optionHidden" :class="{ 'active' : selectOption}">
+    <div class="select__optionHidden" :class="{ 'active': selectOption }">
       {{ defaultOption }}
     </div>
     <select v-model="selectOption" class="select__field" @change="updateSelectOption">
       <option disabled selected hidden></option>
-      <option v-for="option in options">{{option}}</option>
+      <option v-for="option in options">{{ option }}</option>
     </select>
     <div class="select__icon">
-      <nuxt-icon name="reused/Arrow" filled/>
+      <nuxt-icon name="reused/Arrow" filled />
     </div>
   </div>
 </template>
@@ -29,6 +29,12 @@ function updateSelectOption(event) {
 <style lang="scss" scoped>
 .select {
   position: relative;
+  max-width: 100%;
+
+  select {
+    max-width: 100%;
+    width: 100%;
+  }
 
   &__optionHidden {
     position: absolute;
@@ -39,6 +45,7 @@ function updateSelectOption(event) {
     color: $blue-grey;
     user-select: none;
     pointer-events: none;
+    max-width: 100%;
   }
 
   &__optionHidden.active {
@@ -56,6 +63,7 @@ function updateSelectOption(event) {
     width: 100%;
     color: $dark-blue;
     font-weight: $fw-semibold;
+    max-width: 100%;
 
     &:hover {
       border: 1px $secondary-black solid;
@@ -75,5 +83,4 @@ function updateSelectOption(event) {
     pointer-events: none;
   }
 }
-
 </style>
