@@ -1,21 +1,23 @@
 <template>
   <div class="input-field">
     <ClientOnly>
-      <input required v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue"
-             @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone"/>
-      <input required :type="type" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" v-else/>
+      <input required ref="input" v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone" />
+      <input required ref="input" @focus="isFocused = true" @blur="isFocused = false"
+      :type="type === 'date' ? (isFocused || modelValue?.length > 0 ? 'date' : 'text') : type" :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)" v-else />
+  
     </ClientOnly>
-
+    <!-- <nuxt-icon class="input-field__icon" name="reused/CalendarBlank" filled @click="$refs.input.focus(); $refs.input.click()" v-if="type === 'date'" /> -->
     <label>{{ placeholder }}</label>
-    <button @click="clearInput" v-if="modelValue !== ''">
-      <nuxt-icon name="reused/Close" filled/>
+    <button @click="clearInput" v-if="modelValue !== '' && type !== 'date'">
+      <nuxt-icon name="reused/Close" filled />
     </button>
   </div>
 
 </template>
 
 <script setup>
-import Button from "~/components/UI/Buttons/button.vue";
 
 const props = defineProps({
   placeholder: String,
@@ -23,6 +25,8 @@ const props = defineProps({
   modelValue: String,
   isPhone: Boolean
 });
+
+const isFocused = ref(false)
 
 const emit = defineEmits(['update:modelValue']);
 
@@ -33,11 +37,10 @@ const clearInput = () => {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 .input-field {
   position: relative;
   color: $blue-grey;
-
 
   label {
     position: absolute;
@@ -62,6 +65,19 @@ const clearInput = () => {
     font-weight: $fw-semibold;
     color: $dark-blue;
 
+    &[type="date"]::-webkit-calendar-picker-indicator {
+      color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      display: block;
+      background: url('/assets/icons/reused/CalendarBlank.svg') center / cover no-repeat;
+      position: absolute;
+      top:calc(50% - 0.75rem);
+      right: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-width: thin;
+    }
+
     &:hover {
       border: 1px $main-dark solid;
     }
@@ -73,6 +89,19 @@ const clearInput = () => {
     }
   }
 
+  // &__icon {
+  //   position: absolute;
+  //   right: 1rem;
+  //   top: calc(50% - 0.75rem);
+  //   width: 1.5rem;
+  //   height: 1.5rem;
+
+  //   & svg {
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  // }
+
   button {
     display: none;
     position: absolute;
@@ -83,10 +112,12 @@ const clearInput = () => {
     cursor: pointer;
     outline: none;
   }
+
+
 }
 
-.input-field input:focus ~ label,
-.input-field input:valid ~ label {
+.input-field input:focus~label,
+.input-field input:valid~label {
   font-size: $font-xsm;
   top: 1.25rem;
   left: 1rem;

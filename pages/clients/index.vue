@@ -43,7 +43,7 @@
 <script setup>
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/actionButton.vue";
-import Search from "~/components/UI/Searches/search.vue";
+import Search from "~/components/UI/Searches/Search.vue";
 
 const searchValue = ref("")
 

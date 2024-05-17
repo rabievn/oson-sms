@@ -39,7 +39,7 @@ function updateSelectOption(event) {
   &__optionHidden {
     position: absolute;
     top: 50%;
-    left: 16px;
+    left: 1rem;
     transform: translateY(-50%);
     font-size: $font-md;
     color: $blue-grey;
@@ -50,16 +50,16 @@ function updateSelectOption(event) {
 
   &__optionHidden.active {
     transition: top 0.15s ease, font-size 0.15s ease;
-    top: 20px;
+    top: 1.25rem;
     font-size: $font-sm;
   }
 
   &__field {
     background: $light-grey;
-    height: 64px;
-    border-radius: 12px;
-    padding-inline: 16px;
-    padding-top: 15px;
+    height: 4rem;
+    border-radius: 0.75rem;
+    padding-inline: 1rem;
+    padding-top: 0.9375rem;
     width: 100%;
     color: $dark-blue;
     font-weight: $fw-semibold;
@@ -78,7 +78,7 @@ function updateSelectOption(event) {
   &__icon {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 1.25rem;
     transform: translateY(-50%);
     pointer-events: none;
   }

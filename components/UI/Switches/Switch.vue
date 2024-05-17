@@ -41,6 +41,7 @@ const props = defineProps({
  background: $dark-grey;
  transition: .3s;
  border-radius: 2.5rem;
+ border: none;
 //  border: 1px solid #ccc;
 }
 
@@ -49,7 +50,7 @@ const props = defineProps({
  content: "";
  height: 1.25rem;
  width: 1.25rem;
- border-radius: 1rem;
+ border-radius: 50%;
  left: 0.125rem;
  top: 0.125rem;
  bottom: 0;
@@ -59,7 +60,6 @@ const props = defineProps({
 
 input:checked + .slider {
  background-color: $yellow;
-//  border: 1px solid transparent;
 }
 
 input:checked + .slider:before {

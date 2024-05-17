@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import Input from "~/components/UI/Inputs/input.vue";
+import Input from "~/components/UI/Inputs/Input.vue";
 
 const props = defineProps({
   placeholder: String,

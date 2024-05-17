@@ -8,7 +8,7 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .back-button {
     background-color: $main-dark;
     width: 2.5rem;
@@ -18,20 +18,15 @@
     @include flexCenter;
 
     &__icon {
-        background: #000;
         width: 1.5rem;
         height: 1.5rem;
 
-        svg {
-            fill: red !important;
-            stroke: red !important;
+        svg,
+        path {
+            width: 100%;
+            height: 100%;
+            stroke: $white;
         }
     }
-}
-
-.nuxt-icon svg {
-    fill: red !important;
-    stroke: red !important;
-
 }
 </style>

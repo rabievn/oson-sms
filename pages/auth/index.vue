@@ -13,8 +13,8 @@
 definePageMeta({
   layout: 'auth-layout'
 })
-import Input from "~/components/UI/Inputs/input.vue";
-import Button from "~/components/UI/Buttons/button.vue";
+import Input from "~/components/UI/Inputs/Input.vue";
+import Button from "~/components/UI/Buttons/Button.vue";
 
 
 const login = ref('');
