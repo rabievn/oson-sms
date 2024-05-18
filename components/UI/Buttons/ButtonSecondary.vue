@@ -12,7 +12,6 @@
   border: 1px solid $dark-grey;
   color: $main-dark;
   font-weight: $fw-bold;
-  background: $white;
   cursor: pointer;
 
   &:hover {

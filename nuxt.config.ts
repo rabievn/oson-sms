@@ -15,11 +15,12 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css:['@/assets/scss/main.scss'],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/scss/main.scss";',
+          additionalData: '@import "@/assets/scss/_vars.scss";@import "@/assets/scss/_mixins.scss";',
         },
       },
     },
