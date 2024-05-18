@@ -31,12 +31,12 @@ defineProps({
 
     &__header {
      @include flexBetween;
+      border-bottom: $border;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     &__main {
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: $border;
     }
 
     &__footer {

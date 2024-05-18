@@ -51,6 +51,7 @@ const props = defineProps({
 
   &__button {
     position: absolute;
+    background: transparent;
     top: 50%;
     right: 16px;
     transform: translateY(-50%);

@@ -35,6 +35,16 @@
 
     <template #aside>
       <ClientGroupsBage/>
+      <card>
+        <template #main class="blackList__template">
+          <div class="blackList">
+            <button class="blackList__button">
+              123
+            </button>
+            <nuxt-icon name="reused/CaretRight"/>
+          </div>
+        </template>
+      </card>
     </template>
 
   </WithAsideLayout>
@@ -44,6 +54,7 @@
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/actionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
+import Button from "~/components/UI/Buttons/button.vue";
 
 const searchValue = ref("")
 
@@ -57,5 +68,14 @@ const searchValue = ref("")
   }
 }
 
+.blackList {
+  @include flexBetween;
+  width: 100%;
+}
+
+.blackList button {
+  font-size: $font-xl;
+  color: $black;
+}
 
 </style>
