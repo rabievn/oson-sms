@@ -3,7 +3,7 @@
     <input type="text" class="search__input" :placeholder="placeholder" :value="modelValue"
            @input="$emit('update:modelValue', $event.target.value)"/>
     <button class="search__button">
-      <nuxt-icon class="search__icon" name="reused/Magnifier"/>
+      <nuxt-icon filled class="search__icon" name="reused/Magnifier"/>
     </button>
   </div>
 </template>

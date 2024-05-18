@@ -3,7 +3,7 @@
         <template #header>
             <h1>Группы</h1>
             <action-button class="iconText">
-                <nuxt-icon class="aside__actionButton-icon" name="clients/PlusCircle" />
+                <nuxt-icon filled class="aside__actionButton-icon" name="clients/PlusCircle" />
                 Создать группу
             </action-button>
         </template>
@@ -12,25 +12,25 @@
                 <li>
                     <button class="layout-list__button">
                         <span> Мужчины (500) </span>
-                        <nuxt-icon name="reused/CaretRight" />
+                        <nuxt-icon filled name="reused/CaretRight" />
                     </button>
                 </li>
                 <li>
                     <button class="layout-list__button">
                         <span> Женщины (400) </span>
-                        <nuxt-icon name="reused/CaretRight" />
+                        <nuxt-icon filled name="reused/CaretRight" />
                     </button>
                 </li>
                 <li>
                     <button class="layout-list__button">
                         <span> 18-25 лет (700) </span>
-                        <nuxt-icon name="reused/CaretRight" />
+                        <nuxt-icon filled name="reused/CaretRight" />
                     </button>
                 </li>
                 <li>
                     <button class="layout-list__button">
                         <span> 25-40 лет (951) </span>
-                        <nuxt-icon name="reused/CaretRight" />
+                        <nuxt-icon filled name="reused/CaretRight" />
                     </button>
                 </li>
             </ul>

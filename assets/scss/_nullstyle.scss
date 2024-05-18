@@ -205,6 +205,7 @@ button,
 [type='reset'],
 [type='submit'] {
 	-webkit-appearance: button;
+
 }
 
 /**
@@ -344,12 +345,4 @@ object {
   display: block;
   vertical-align: middle;
   max-width: 100%;
-}
-
-
-/*
-Nuxt-icon fill for override nuxt-icon default bug style
-*/
-.nuxt-icon.nuxt-icon--fill, .nuxt-icon.nuxt-icon--fill * {
-	fill: transparent !important;
 }
