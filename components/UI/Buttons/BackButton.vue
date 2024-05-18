@@ -1,12 +1,19 @@
 <template>
-    <div class="back-button">
-        <nuxt-icon class="back-button__icon" name="reused/ArrowLeft" filled />
-    </div>
+  <button @click="handleClick" class="back-button">
+    <nuxt-icon class="back-button__icon" name="reused/ArrowLeft" filled />
+  </button>
 </template>
 
 <script setup>
+import { defineEmits } from 'vue'
 
+const emit = defineEmits(['backClick'])
+
+const handleClick = () => {
+  emit('backClick')
+}
 </script>
+
 
 <style lang="scss">
 .back-button {

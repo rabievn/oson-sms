@@ -49,5 +49,6 @@ import ActionButton from "~/components/UI/Buttons/actionButton.vue";
   width: 100%;
   height: 2.5rem;
   color: $secondary-black;
+  background: transparent;
 }
 </style>

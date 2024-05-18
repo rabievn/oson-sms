@@ -5,7 +5,7 @@
             <card class="new-client-card">
                 <template #header>
                     <div class="new-client-card__header">
-                        <back-button />
+                        <back-button @back-click="$router.go(-1)"/>
                         <h1>Новый Клиент</h1>
                     </div>
                 </template>
