@@ -1,6 +1,6 @@
 <template>
   <button @click="handleClick" class="back-button">
-    <nuxt-icon class="back-button__icon" name="reused/ArrowLeft" filled/>
+    <nuxt-icon class="back-button__icon" name="reused/ArrowLeft" filled />
   </button>
 </template>
 
@@ -31,12 +31,13 @@ const handleClick = () => {
   }
 
   &__icon {
-    width: 1.5rem;
-    height: 1.5rem;
-
+    display: block;
+    flex: 0 0 1.5rem;
+    height: 100%;
     svg,
     path {
-      width: 100%;
+      width: 1.5rem;
+      min-width: 100%;
       height: 100%;
       stroke: $white;
     }
