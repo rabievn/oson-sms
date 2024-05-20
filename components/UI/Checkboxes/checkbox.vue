@@ -13,10 +13,10 @@
 .container {
   display: block;
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 1.375rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -37,16 +37,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
-  border: 2px solid $main-dark;
-  border-radius: 6px;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  border: 0.125rem solid $main-dark;
+  border-radius: 0.375rem;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: $main-dark;
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -63,12 +63,12 @@
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
+  left: 0.5625rem;
+  top: 0.3125rem;
+  width: 0.3125rem;
+  height: 0.625rem;
   border: solid white;
-  border-width: 0 3px 3px 0;
+  border-width: 0 0.1875rem 0.1875rem 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);

@@ -1,8 +1,14 @@
 <template>
-  <button class="actionButton">
-    <slot/>
+  <button class="actionButton" @click="goTo && $router.push(goTo)">
+    <slot />
   </button>
 </template>
+
+<script setup>
+defineProps({
+  goTo: String
+})
+</script>
 
 <style>
 .actionButton .nuxt-icon svg {
@@ -21,16 +27,19 @@
   font-size: $font-sm;
   font-weight: $fw-medium;
   outline-offset: -2px;
+
   &:disabled {
     background: $grey;
     color: $dark-grey;
     outline-offset: 0;
   }
+
   &:hover:not(:disabled) {
     background: $back;
     outline: 1px solid $grey;
     outline-offset: 0;
   }
+
   &:active:not(:disabled) {
     background: $grey;
     outline: 1px solid $grey;

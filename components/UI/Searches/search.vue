@@ -30,7 +30,7 @@ const props = defineProps({
   &__input {
     width: 100%;
     height: 4rem;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     padding-inline: 1rem;
     background: $light-grey;
     color: $dark-blue;
