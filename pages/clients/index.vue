@@ -26,8 +26,9 @@
           </div>
         </template>
         <template #main>
-          <div>
+          <div class="client__main">
             <search v-model="searchValue" placeholder="имя, номер телефона"/>
+            <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers"/>
           </div>
         </template>
       </card>
@@ -55,8 +56,98 @@ import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/actionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
 import Button from "~/components/UI/Buttons/button.vue";
+import Table from "~/components/UI/Tables/Table.vue";
+import devServerLogs from "#app/plugins/dev-server-logs.js";
 
 const searchValue = ref("")
+
+const items = ref([])
+
+const headers = ref(['ФИО', '№ телефона', 'Дата рождения', 'Группа', 'Поздравить', 'Статус'])
+
+const dataTable = [
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  },
+  {
+    FIO: "Ali Huseyin Yagiz",
+    phone: "+992(92)707-1111",
+    dob: "19.02.1983",
+    group: "Мужчины",
+    congratulate: false,
+    status: false
+  }
+];
+
 
 </script>
 
@@ -71,12 +162,18 @@ const searchValue = ref("")
 .blackList {
   @include flexBetween;
   width: 100%;
+
+  button {
+    font-size: $font-xl;
+    color: $black;
+    font-weight: $fw-bold;
+  }
 }
 
-.blackList button {
-  font-size: $font-xl;
-  color: $black;
-  font-weight: $fw-bold;
+.client__main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 </style>

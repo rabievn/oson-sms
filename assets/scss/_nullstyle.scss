@@ -149,7 +149,13 @@ table {
 Forms
 =====
 */
-
+input[type="checkbox"] {
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	-ms-appearance: none !important;
+	-o-appearance: none !important;
+	appearance: none !important;
+}
 /**
 1. Change the font styles in all browsers.
 2. Remove the margin in Firefox and Safari.
@@ -207,7 +213,7 @@ button,
 [type='reset'],
 [type='submit'] {
 	-webkit-appearance: button;
-
+	cursor: pointer;
 }
 
 /**
