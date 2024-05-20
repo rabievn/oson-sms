@@ -2,7 +2,7 @@
     <card>
         <template #header>
             <h1>Группы</h1>
-            <action-button class="iconText">
+            <action-button class="iconText" :goTo="'/clients/new-group'">
                 <nuxt-icon filled class="aside__actionButton-icon" name="clients/PlusCircle" />
                 Создать группу
             </action-button>

@@ -19,8 +19,8 @@
                             <Select v-model="data.smsLayout" :defaultOption="'Шаблон сообщений'"
                                 :options="smsLayouts" />
                         </div>
-                        <div class="new-client-card__border"></div>
-                        <ul class="new-client-card__option-list">
+                        <div class="border-line"></div>
+                        <ul class="option-list">
                             <li class="option">
                                 <span class="option__text">Поздравлять на День рождения</span>
                                 <Switch class="option__switch" v-model="data.options.option1" />
@@ -30,7 +30,7 @@
                                 <Switch class="option__switch" v-model="data.options.option2" />
                             </li>
                         </ul>
-                        <div class="new-client-card__border"></div>
+                        <div class="border-line"></div>
                         <div class="new-client-card__params">
                             <Input v-model="data.params.param1" :placeholder="'Param 1'" />
                             <Input v-model="data.params.param2" :placeholder="'Param 2'" />
@@ -38,7 +38,7 @@
                             <Input v-model="data.params.param4" :placeholder="'Param 4'" />
                             <Input v-model="data.params.param5" :placeholder="'Param 5'" />
                         </div>
-                        <div class="new-client-card__buttons">
+                        <div class="card-control-buttons">
                             <ButtonSecondary>Отменить</ButtonSecondary>
                             <Button class="">Создать</Button>
                         </div>
@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import ButtonSecondary from './../../../components/UI/Buttons/ButtonSecondary.vue'
+import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import Button from '~/components/UI/Buttons/Button.vue'
 import Switch from '~/components/UI/Switches/Switch.vue'
 import Select from '~/components/UI/Selects/select.vue'
@@ -90,10 +90,6 @@ const smsLayouts = ref(['1'])
 
 <style lang="scss" scoped>
 .new-client-card {
-    &__border {
-        border-bottom: $border;
-        margin-block: 2rem;
-    }
 
     &__header {
         display: flex;
@@ -102,46 +98,22 @@ const smsLayouts = ref(['1'])
         white-space: nowrap;
     }
 
-    &__main {}
-
-    &__option-list {
+    &__main {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-
-        .option {
-            @include flexBetween;
-            font-weight: $fw-medium;
-            color: $main-dark;
-            letter-spacing: 0.75px;
-
-            &__text {}
-
-            &__switch {
-                flex: 0 0 auto;
-            }
-
-        }
     }
 
     &__selects {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
-
     }
 
     &__params {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
-    }
-
-    &__buttons {
-        display: flex;
-        justify-content: flex-end;
-        gap: 1rem;
-        margin-top: 2rem;
     }
 }
 </style>
