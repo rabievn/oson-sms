@@ -49,12 +49,14 @@
 
         <template #aside>
             <ClientGroupsBage />
+            <BlackListBage />
         </template>
 
     </WithAsideLayout>
 </template>
 
 <script setup>
+import BlackListBage from '~/components/BlackListBage.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import Button from '~/components/UI/Buttons/Button.vue'
 import Switch from '~/components/UI/Switches/Switch.vue'

@@ -4,7 +4,7 @@
         <template #default>
             <card class="mailing-card">
                 <template #header>
-                    <h1>Новая группа</h1>
+                    <h1>Черный список</h1>
                     <div class="mailing-card__header-buttons">
                         <action-button class="iconText">
                             <nuxt-icon filled name="clients/FileArrowDown" />
