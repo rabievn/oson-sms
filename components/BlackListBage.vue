@@ -1,12 +1,12 @@
 <template>
     <card>
         <template #main>
-            <div class="blackList" @click="$router.push('/clients/black-list')">
+            <button class="blackList" @click="$router.push('/clients/black-list')">
                     <h1>
                         Черный список (183)
                     </h1>
                 <nuxt-icon filled name="reused/CaretRight" />
-            </div>
+            </button>
         </template>
     </card>
 </template>
@@ -20,5 +20,6 @@ export default {
 <style lang="scss" scoped>
 .blackList {
     @include flexBetween;
+    width:100%;
 }
 </style>
