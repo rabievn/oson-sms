@@ -147,7 +147,7 @@ const dataTable = [
 .mailing-card {
   &__header-buttons {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
   }
 
 

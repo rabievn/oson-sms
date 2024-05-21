@@ -2,7 +2,7 @@
   <table class="table">
     <thead class="table__mainHead">
     <tr class="table__headRow">
-      <th class="table__headCell">
+      <th v-show="isCheckboxExist" class="table__headCell">
         <Checkbox/>
       </th>
       <th class="table__headCell" v-for="header in headers" :key="header.id">{{ header }}</th>
@@ -10,7 +10,7 @@
     </thead>
     <tbody class="table__body">
     <tr class="table__bodyRow" v-for="(item, index) in items" :key="index">
-      <td class="table__headCell">
+      <td v-show="isCheckboxExist" class="table__headCell">
         <Checkbox/>
       </td>
       <td class="table__bodyData" v-for="(value, key) in item" :key="key">
@@ -57,6 +57,7 @@ defineProps({
   }
 
   &__headCell {
+    padding-block: 0.75rem;
     font-weight: $fw-bold;
   }
 
@@ -69,7 +70,7 @@ defineProps({
   }
 
   &__bodyData {
-    padding-block: 12px;
+    padding-block: 0.75rem;
     color: $secondary-black;
   }
 }
