@@ -1,16 +1,10 @@
 <template>
-    <button 
-    ref="button"
-    :class="`
+    <button ref="button" :class="`
         side-item 
-        ${route.path === $route.path ? 'active' : ''}
+        ${$route.path.split('/')[1] === route.path.replace('/', '') ? 'active' : ''}
         ${pressed ? 'pressed' : ''}
-    `" 
-    @click="$router.push(route.path)"
-    @mousedown="button.classList.add('pressed')"
-    @mouseup="button.classList.remove('pressed')"
-    @mouseleave="button.classList.remove('pressed')"
-    >
+    `" @click="$router.push(route.path)" @mousedown="button.classList.add('pressed')"
+        @mouseup="button.classList.remove('pressed')" @mouseleave="button.classList.remove('pressed')">
         <slot />
     </button>
 
@@ -18,7 +12,7 @@
 
 <script setup>
 const pressed = false
-defineProps(['route'])
+defineProps({ route: String })
 const button = ref('button')
 </script>
 
@@ -44,6 +38,7 @@ const button = ref('button')
     &.active {
         background: $main-dark;
         color: $white;
+
         &.nuxt-icon svg path {
             stroke: $white;
         }
