@@ -30,7 +30,7 @@
             <search v-model="searchValue" placeholder="имя, номер телефона"/>
             <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers"/>
             <div class="border-line"></div>
-            <pagination/>
+            <pagination common-pages="24"/>
           </div>
         </template>
       </card>

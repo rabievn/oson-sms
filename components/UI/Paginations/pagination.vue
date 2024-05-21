@@ -1,30 +1,38 @@
 <template>
   <div class="pagination">
     <ul>
-      <li class="btn prev" @click="createPagination(page - 1)">
-        <span> Prev</span>
+      <li :class="`btn prev ${page === 1 && 'firstPage' }`" @click="createPagination(page - 1)">
+        <nuxt-icon filled name="reused/CaretRight"/>
       </li>
       <li v-if="page > 2" class="first numb" @click="createPagination(1)">
         <span>1</span>
       </li>
       <li v-if="page > 3" class="dots"><span>...</span></li>
-      <li v-for="plength in paginationRange" :key="plength" :class="['numb', { active: page === plength }]" @click="createPagination(plength)">
+      <li v-for="plength in paginationRange" :key="plength" :class="['numb', { active: page === plength }]"
+          @click="createPagination(plength)">
         <span>{{ plength }}</span>
       </li>
       <li v-if="page < totalPages - 2" class="dots"><span>...</span></li>
       <li v-if="page < totalPages - 1" class="last numb" @click="createPagination(totalPages)">
         <span>{{ totalPages }}</span>
       </li>
-      <li class="btn next" @click="createPagination(page + 1)">
-        <span>Next </span>
+      <li :class="`btn next ${page >= totalPages && 'lastPage' }`" @click="createPagination(page + 1)">
+        <nuxt-icon filled name="reused/CaretRight"/>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup>
-const totalPages = 20;
-const page = ref(10);
+const props = defineProps({
+  commonPages: {
+    type: Number,
+    required: true
+  }
+});
+
+const totalPages = props.commonPages;
+const page = ref(1);
 
 const paginationRange = computed(() => {
   let range = [];
@@ -52,66 +60,80 @@ const paginationRange = computed(() => {
 });
 
 function createPagination(newPage) {
+  if (newPage < 1) {
+    return;
+  }
+  if (newPage > totalPages) {
+    return;
+  }
   page.value = newPage;
 }
+
 </script>
+
+
+<style lang="scss">
+.pagination ul li.btn.prev .nuxt-icon svg {
+  rotate: 180deg;
+}
+
+.pagination ul li.btn .nuxt-icon svg path {
+  stroke: $main-dark;
+}
+
+.pagination ul li.btn.lastPage .nuxt-icon svg path {
+  stroke: $dark-grey;
+}
+
+.pagination ul li.btn.firstPage .nuxt-icon svg path {
+  stroke: $dark-grey;
+}
+</style>
 
 <style lang="scss" scoped>
 .pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  ul {
+    @include flexCenter;
+    width: 100%;
+    flex-wrap: wrap;
 
-.pagination ul {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    li {
+      color: $dark-grey;
+      list-style: none;
+      text-align: center;
+      font-size: 0.875rem;
+      font-weight: $fw-regular;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.3s ease;
 
-.pagination ul li {
-  color: $dark-grey;
-  list-style: none;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.3s ease;
-}
+      &.numb {
+        list-style: none;
+        margin-inline: 1rem;
+        border-radius: 50%;
+      }
 
-.pagination ul li.numb {
-  list-style: none;
-  height: 45px;
-  width: 45px;
-  margin: 0 3px;
-  line-height: 45px;
-  border-radius: 50%;
-}
+      &.dots {
+        font-size: 1.375rem;
+        cursor: default;
+      }
 
-.pagination ul li.numb.first {
-  margin: 0px 3px 0 -5px;
-}
+      &.btn {
+        @include flexCenter;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 100%;
+        background: $back;
+      }
 
-.pagination ul li.numb.last {
-  margin: 0px -5px 0 3px;
-}
-
-.pagination ul li.dots {
-  font-size: 22px;
-  cursor: default;
-}
-
-.pagination ul li.btn {
-  padding: 0 20px;
-  border-radius: 50px;
-}
-
-.pagination li.active,
-.pagination ul li.numb:hover,
-.pagination ul li:first-child:hover,
-.pagination ul li:last-child:hover {
-  color: $main-dark;
+      &.active,
+      &:hover,
+      &:first-child:hover,
+      &:last-child:hover {
+        color: $main-dark;
+      }
+    }
+  }
 }
 </style>
+
