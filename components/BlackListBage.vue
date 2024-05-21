@@ -1,10 +1,10 @@
 <template>
     <card>
-        <template #main>
+        <template #main class="blackList__template">
             <div class="blackList">
-                    <h1>
-                        Черный список (183)
-                    </h1>
+                <button class="blackList__button">
+                    Черный список (183)
+                </button>
                 <nuxt-icon filled name="reused/CaretRight" />
             </div>
         </template>
@@ -19,6 +19,13 @@ export default {
 
 <style lang="scss" scoped>
 .blackList {
-    @include flexBetween;
+  @include flexBetween;
+  width: 100%;
+
+  button {
+    font-size: $font-xl;
+    color: $black;
+    font-weight: $fw-bold;
+  }
 }
 </style>
