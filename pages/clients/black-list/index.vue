@@ -4,7 +4,7 @@
         <template #default>
             <card class="mailing-card">
                 <template #header>
-                    <h1>Новая группа</h1>
+                    <h1>Черный список</h1>
                     <div class="mailing-card__header-buttons">
                         <action-button class="iconText">
                             <nuxt-icon filled name="clients/FileArrowDown" />
@@ -27,7 +27,7 @@
                 </template>
                 <template #main>
                     <div class="client__main">
-                        <Input v-model="groupName" placeholder="Название группы"/>
+                        <search v-model="searchValue" placeholder="Название группы" />
                         <ul class="option-list">
                             <li class="option">
                                 <span class="option__text">Активировать группу</span>
@@ -36,10 +36,12 @@
                         </ul>
                         <div class="border-line"></div>
                         <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers" />
-                        <div class="card-control-buttons">
+                        <!-- <div class="card-control-buttons">
                             <ButtonSecondary>Отменить</ButtonSecondary>
                             <Button class="">Создать</Button>
-                        </div>
+                        </div> -->
+                        <div class="border-line"></div>
+                        <pagination />
                     </div>
                 </template>
             </card>
@@ -47,14 +49,14 @@
 
         <template #aside>
             <ClientGroupsBage />
-            <BlackListBage/>
+            <BlackListBage />
         </template>
 
     </WithAsideLayout>
 </template>
 
 <script setup>
-import Input from './../../../components/UI/Inputs/Input.vue'
+import pagination from '~/components/UI/Paginations/pagination.vue'
 import BlackListBage from '~/components/BlackListBage.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
@@ -69,7 +71,7 @@ const options = {
     activate: false
 }
 
-const groupName = ref("")
+const searchValue = ref("")
 
 const items = ref([])
 

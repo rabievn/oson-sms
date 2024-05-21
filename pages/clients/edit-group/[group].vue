@@ -4,7 +4,7 @@
         <template #default>
             <card class="mailing-card">
                 <template #header>
-                    <h1>Новая группа</h1>
+                    <h1>Редактировать</h1>
                     <div class="mailing-card__header-buttons">
                         <action-button class="iconText">
                             <nuxt-icon filled name="clients/FileArrowDown" />
@@ -24,10 +24,11 @@
                             <nuxt-icon filled name="clients/UsersThree" />
                         </action-button>
                     </div>
+                    
                 </template>
                 <template #main>
                     <div class="client__main">
-                        <Input v-model="groupName" placeholder="Название группы"/>
+                        <Input v-model="groupName" placeholder="Название группы" :disabled="true"/>
                         <ul class="option-list">
                             <li class="option">
                                 <span class="option__text">Активировать группу</span>
@@ -54,7 +55,7 @@
 </template>
 
 <script setup>
-import Input from './../../../components/UI/Inputs/Input.vue'
+import Input from '~/components/UI/Inputs/Input.vue'
 import BlackListBage from '~/components/BlackListBage.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
@@ -68,6 +69,11 @@ import Switch from "~/components/UI/Switches/Switch.vue";
 const options = {
     activate: false
 }
+const route = useRoute()
+
+onMounted(() => {
+    groupName.value = route.params.group
+})
 
 const groupName = ref("")
 
