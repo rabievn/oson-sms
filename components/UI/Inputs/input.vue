@@ -1,10 +1,11 @@
 <template>
   <div class="input-field">
     <ClientOnly>
-      <input required ref="input" v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone" />
+      <input required ref="input" v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue" :disabled="disabled"
+        @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone"/>
+        
       <input required ref="input" @focus="isFocused = true" @blur="isFocused = false"
-      :type="type === 'date' ? (isFocused || modelValue?.length > 0 ? 'date' : 'text') : type" :value="modelValue"
+      :type="type === 'date' ? (isFocused || modelValue?.length > 0 ? 'date' : 'text') : type" :value="modelValue" :disabled="disabled"
         @input="$emit('update:modelValue', $event.target.value)" v-else />
   
     </ClientOnly>
@@ -23,7 +24,8 @@ const props = defineProps({
   placeholder: String,
   type: String,
   modelValue: String,
-  isPhone: Boolean
+  isPhone: Boolean,
+  disabled: Boolean
 });
 
 const isFocused = ref(false)
@@ -117,7 +119,8 @@ const clearInput = () => {
 }
 
 .input-field input:focus~label,
-.input-field input:valid~label {
+.input-field input:valid~label,
+.input-field input:disabled~label {
   font-size: $font-xsm;
   top: 1.25rem;
   left: 1rem;
