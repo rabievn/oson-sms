@@ -68,7 +68,7 @@ import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/actionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
 import Button from "~/components/UI/Buttons/button.vue";
-import Table from "~/components/UI/Tables/Table.vue";
+import Table from "~/components/UI/Tables/table.vue";
 import devServerLogs from "#app/plugins/dev-server-logs.js";
 import Switch from "~/components/UI/Switches/Switch.vue";
 
