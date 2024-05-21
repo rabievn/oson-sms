@@ -47,22 +47,14 @@
 
         <template #aside>
             <ClientGroupsBage />
-            <card>
-                <template #main class="blackList__template">
-                    <div class="blackList">
-                        <button class="blackList__button">
-                            Черный список (183)
-                        </button>
-                        <nuxt-icon filled name="reused/CaretRight" />
-                    </div>
-                </template>
-            </card>
+            <BlackListBage/>
         </template>
 
     </WithAsideLayout>
 </template>
 
 <script setup>
+import BlackListBage from '~/components/BlackListBage.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/actionButton.vue";
