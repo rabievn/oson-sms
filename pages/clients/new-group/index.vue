@@ -37,7 +37,7 @@
                         <div class="border-line"></div>
                         <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers" />
                         <div class="card-control-buttons">
-                            <ButtonSecondary>Отменить</ButtonSecondary>
+                            <ButtonSecondary @click="$router.push('/clients')">Отменить</ButtonSecondary>
                             <Button class="">Создать</Button>
                         </div>
                     </div>
