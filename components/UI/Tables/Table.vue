@@ -24,7 +24,7 @@
 
 <script setup>
 import Switch from "~/components/UI/Switches/Switch.vue";
-import Checkbox from "~/components/UI/Checkboxes/checkbox.vue";
+import Checkbox from "~/components/UI/Checkboxes/Checkbox.vue";
 
 defineProps({
   headers: {

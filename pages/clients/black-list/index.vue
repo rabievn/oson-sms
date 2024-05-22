@@ -56,14 +56,14 @@
 </template>
 
 <script setup>
-import pagination from '~/components/UI/Paginations/pagination.vue'
+import pagination from '~/components/UI/Paginations/Pagination.vue'
 import BlackListBage from '~/components/BlackListBage.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
-import ActionButton from "~/components/UI/Buttons/actionButton.vue";
+import ActionButton from "~/components/UI/Buttons/ActionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
-import Button from "~/components/UI/Buttons/button.vue";
-import Table from "~/components/UI/Tables/table.vue";
+import Button from "~/components/UI/Buttons/Button.vue";
+import Table from "~/components/UI/Tables/Table.vue";
 import devServerLogs from "#app/plugins/dev-server-logs.js";
 import Switch from "~/components/UI/Switches/Switch.vue";
 

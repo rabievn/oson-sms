@@ -60,7 +60,7 @@ import BlackListBage from '~/components/BlackListBage.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import Button from '~/components/UI/Buttons/Button.vue'
 import Switch from '~/components/UI/Switches/Switch.vue'
-import Select from '~/components/UI/Selects/select.vue'
+import Select from '~/components/UI/Selects/Select.vue'
 import Input from '~/components/UI/Inputs/Input.vue'
 import BackButton from '~/components/UI/Buttons/backButton.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";

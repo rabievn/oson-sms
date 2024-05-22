@@ -25,7 +25,7 @@ definePageMeta({
 })
 import Input from "~/components/UI/Inputs/Input.vue";
 import Button from "~/components/UI/Buttons/Button.vue";
-import Select from "~/components/UI/Selects/select.vue";
+import Select from "~/components/UI/Selects/Select.vue";
 
 const name = ref('')
 const phone = ref('')

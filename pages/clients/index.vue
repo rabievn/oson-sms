@@ -23,14 +23,15 @@
             <action-button disabled>
               <nuxt-icon filled name="clients/UsersThree"/>
             </action-button>
+            <lines-count />
           </div>
         </template>
         <template #main>
           <div class="client__main">
-            <search v-model="searchValue" placeholder="имя, номер телефона"/>
+            <Search v-model="searchValue" placeholder="имя, номер телефона"/>
             <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers"/>
             <div class="border-line"></div>
-            <pagination common-pages="24"/>
+            <Pagination common-pages="24"/>
           </div>
         </template>
       </card>
@@ -47,12 +48,11 @@
 <script setup>
 import BlackListBage from '~/components/BlackListBage.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
-import ActionButton from "~/components/UI/Buttons/actionButton.vue";
+import ActionButton from "~/components/UI/Buttons/ActionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
-import Button from "~/components/UI/Buttons/button.vue";
-import Table from "~/components/UI/Tables/table.vue";
-import devServerLogs from "#app/plugins/dev-server-logs.js";
-import Pagination from "~/components/UI/Paginations/pagination.vue";
+import Table from "~/components/UI/Tables/Table.vue";
+import Pagination from "~/components/UI/Paginations/Pagination.vue";
+import LinesCount from "~/components/UI/Selects/LinesCount.vue";
 
 const searchValue = ref("")
 

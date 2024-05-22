@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import ActionButton from "~/components/UI/Buttons/actionButton.vue";
+import ActionButton from "~/components/UI/Buttons/ActionButton.vue";
 
 </script>
 
