@@ -5,7 +5,7 @@
             <card class="new-client-card">
                 <template #header>
                     <div class="new-client-card__header">
-                        <back-button @back-click="$router.go(-1)"/>
+                        <back-button @back-click="$router.go(-1)" />
                         <h1>Новый Клиент</h1>
                     </div>
                 </template>
@@ -22,11 +22,11 @@
                         <div class="border-line"></div>
                         <ul class="option-list">
                             <li class="option">
-                                <span class="option__text">Поздравлять на День рождения</span>
+                                <span class="option__content">Поздравлять на День рождения</span>
                                 <Switch class="option__switch" v-model="data.options.option1" />
                             </li>
                             <li class="option">
-                                <span class="option__text">Статус клиента (включите, чтобы отправлять SMS)</span>
+                                <span class="option__content">Статус клиента (включите, чтобы отправлять SMS)</span>
                                 <Switch class="option__switch" v-model="data.options.option2" />
                             </li>
                         </ul>
@@ -64,7 +64,7 @@ import Switch from '~/components/UI/Switches/Switch.vue'
 import Select from '~/components/UI/Selects/Select.vue'
 import Input from '~/components/UI/Inputs/Input.vue'
 import BackButton from '~/components/UI/Buttons/backButton.vue'
-import WithAsideLayout from "~/layouts/withAsideLayout.vue";
+import WithAsideLayout from "~/layouts/withAsideLayout.vue"
 
 
 const data = ref({

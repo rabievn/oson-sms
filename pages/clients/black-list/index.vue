@@ -29,7 +29,7 @@
                     <search v-model="searchValue" placeholder="Название группы" />
                     <ul class="option-list">
                         <li class="option">
-                            <span class="option__text">Активировать группу</span>
+                            <span class="option__content">Активировать группу</span>
                             <Switch class="option__switch" v-model="options.activate" />
                         </li>
                     </ul>
