@@ -46,16 +46,17 @@
         </template>
 
         <template #aside>
-            <ClientGroupsBage />
-            <BlackListBage/>
+            <ClientGroupsBadge />
+            <BlackListBadge/>
         </template>
 
     </WithAsideLayout>
 </template>
 
 <script setup>
-import Input from '../../../components/UI/Inputs/Input.vue'
-import BlackListBage from '~/components/BlackListBage.vue'
+import Input from '~/components/UI/Inputs/Input.vue'
+import ClientGroupsBadge from '~/components/badges/ClientGroupsBadge.vue'
+import BlackListBadge from '~/components/badges/BlackListBadge.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/ActionButton.vue";

@@ -56,7 +56,7 @@
 
 <script setup>
 import Input from '~/components/UI/Inputs/Input.vue'
-import BlackListBage from '~/components/BlackListBage.vue'
+import BlackListBage from '~/components/badges/BlackListBadge.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/ActionButton.vue";

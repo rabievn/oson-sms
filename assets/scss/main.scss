@@ -56,3 +56,9 @@ h1 {
   justify-content: flex-end;
   gap: 1rem;
 }
+
+.inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}

@@ -1,8 +1,7 @@
 <template>
   <WithAsideLayout>
-
     <template #default>
-      <card class="mailing-card">
+      <card>
         <template #header>
           <h1>Клиенты</h1>
           <div class="mailing-card__header-buttons">
@@ -27,32 +26,31 @@
           </div>
         </template>
         <template #main>
-          <div class="client__main">
             <Search v-model="searchValue" placeholder="имя, номер телефона"/>
             <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers"/>
             <div class="border-line"></div>
             <Pagination common-pages="24"/>
-          </div>
         </template>
       </card>
     </template>
 
     <template #aside>
-      <ClientGroupsBage/>
-      <BlackListBage/>
+      <ClientGroupsBadge/>
+      <BlackListBadge/>
     </template>
 
   </WithAsideLayout>
 </template>
 
 <script setup>
-import BlackListBage from '~/components/BlackListBage.vue'
+import BlackListBadge from '~/components/badges/BlackListBadge.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/ActionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
 import Table from "~/components/UI/Tables/Table.vue";
 import Pagination from "~/components/UI/Paginations/Pagination.vue";
 import LinesCount from "~/components/UI/Selects/LinesCount.vue";
+import ClientGroupsBadge from '~/components/badges/ClientGroupsBadge.vue';
 
 const searchValue = ref("")
 
@@ -151,12 +149,6 @@ const dataTable = [
     gap: 0.5rem;
   }
 
-
-  .client__main {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
 }
 
 </style>

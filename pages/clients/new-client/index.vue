@@ -11,7 +11,7 @@
                 </template>
                 <template #main>
                     <div class="new-client-card__main">
-                        <div class="new-client-card__selects">
+                        <div class="inputs-grid">
                             <Input v-model="data.fio" :placeholder="'ФИО'" />
                             <Select v-model="data.phone" :defaultOption="'Номер телефона'" :options="phoneNumbers" />
                             <Select v-model="data.group" :defaultOption="'Группа'" :options="groups" />
@@ -31,7 +31,7 @@
                             </li>
                         </ul>
                         <div class="border-line"></div>
-                        <div class="new-client-card__params">
+                        <div class="inputs-grid">
                             <Input v-model="data.params.param1" :placeholder="'Param 1'" />
                             <Input v-model="data.params.param2" :placeholder="'Param 2'" />
                             <Input v-model="data.params.param3" :placeholder="'Param 3'" />
@@ -48,15 +48,16 @@
         </template>
 
         <template #aside>
-            <ClientGroupsBage />
-            <BlackListBage />
+            <ClientGroupsBadge />
+            <BlackListBadge />
         </template>
 
     </WithAsideLayout>
 </template>
 
 <script setup>
-import BlackListBage from '~/components/BlackListBage.vue'
+import BlackListBadge from '~/components/badges/BlackListBadge.vue'
+import ClientGroupsBadge from '~/components/badges/ClientGroupsBadge.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import Button from '~/components/UI/Buttons/Button.vue'
 import Switch from '~/components/UI/Switches/Switch.vue'
@@ -104,18 +105,6 @@ const smsLayouts = ref(['1'])
         display: flex;
         flex-direction: column;
         gap: 2rem;
-    }
-
-    &__selects {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    &__params {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
     }
 }
 </style>

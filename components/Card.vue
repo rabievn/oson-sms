@@ -37,6 +37,9 @@ defineProps({
     }
 
     &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     &__footer {

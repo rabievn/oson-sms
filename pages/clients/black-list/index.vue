@@ -26,30 +26,28 @@
                     </div>
                 </template>
                 <template #main>
-                    <div class="client__main">
-                        <search v-model="searchValue" placeholder="Название группы" />
-                        <ul class="option-list">
-                            <li class="option">
-                                <span class="option__text">Активировать группу</span>
-                                <Switch class="option__switch" v-model="options.activate" />
-                            </li>
-                        </ul>
-                        <div class="border-line"></div>
-                        <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers" />
-                        <!-- <div class="card-control-buttons">
+                    <search v-model="searchValue" placeholder="Название группы" />
+                    <ul class="option-list">
+                        <li class="option">
+                            <span class="option__text">Активировать группу</span>
+                            <Switch class="option__switch" v-model="options.activate" />
+                        </li>
+                    </ul>
+                    <div class="border-line"></div>
+                    <Table :is-checkbox-exist="true" :items="dataTable" :headers="headers" />
+                    <!-- <div class="card-control-buttons">
                             <ButtonSecondary>Отменить</ButtonSecondary>
                             <Button class="">Создать</Button>
                         </div> -->
-                        <div class="border-line"></div>
-                        <pagination />
-                    </div>
+                    <div class="border-line"></div>
+                    <pagination />
                 </template>
             </card>
         </template>
 
         <template #aside>
-            <ClientGroupsBage />
-            <BlackListBage />
+            <ClientGroupsBadge />
+            <BlackListBadge />
         </template>
 
     </WithAsideLayout>
@@ -57,7 +55,8 @@
 
 <script setup>
 import pagination from '~/components/UI/Paginations/Pagination.vue'
-import BlackListBage from '~/components/BlackListBage.vue'
+import ClientGroupsBadge from '~/components/badges/ClientGroupsBadge.vue'
+import BlackListBadge from '~/components/badges/BlackListBadge.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue";
 import ActionButton from "~/components/UI/Buttons/ActionButton.vue";
