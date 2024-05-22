@@ -41,10 +41,21 @@ h1 {
     font-weight: $fw-medium;
     color: $main-dark;
     letter-spacing: 0.75px;
-
-    &__text {
+    width: 100%;
+    gap: 1.5rem;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-
+    &__title {
+      font-weight: $fw-medium;
+      letter-spacing: 0.046875rem;
+    }
+    &__subtitle {
+      color: $dark-grey;
+      letter-spacing: 0.046875rem;
+    }
     &__switch {
       flex: 0 0 auto;
     }
