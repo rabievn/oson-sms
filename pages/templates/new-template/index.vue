@@ -9,49 +9,89 @@
                     </BackButtonWithText>
                 </template>
                 <template #main>
-                        <div class="inputs-grid">
-                            <Input v-model="data.fio" :placeholder="'ФИО'" />
-                            <Select v-model="data.phone" :defaultOption="'Номер телефона'" :options="phoneNumbers" />
-                            <Select v-model="data.group" :defaultOption="'Группа'" :options="groups" />
-                            <Input v-model="data.birthday" :type="'date'" :placeholder="'День рождения'" />
-                            <Select v-model="data.smsLayout" :defaultOption="'Шаблон сообщений'"
-                                :options="smsLayouts" />
+                    <div class="inputs-grid">
+                        <Input v-model="data.title" :placeholder="'Название шаблона'" />
+                        <Select v-model="data.sender" :defaultOption="'Отправитель SMS'" :options="senders" />
+                        <Select v-model="data.group" :defaultOption="'Группа'" :options="groups" />
+                        <Input v-model="data.sendDateTime" :type="'datetime-local'"
+                            :placeholder="'Дата и время отправки'" />
+                        <Select v-model="data.smsLayout" :defaultOption="'Шаблон сообщений'" :options="smsLayouts" />
+                    </div>
+
+                    <div class="text-edit-block">
+                        <div class="text-edit-block__buttons">
+                            <div class="text-edit-block__button">
+                                <nuxt-icon name="reused/Smiley" filled />
+                            </div>
+                            <div class="text-edit-block__button">
+                                <nuxt-icon name="reused/UserCircle" filled />
+                            </div>
+                            <div class="text-edit-block__button">
+                                <nuxt-icon name="reused/Phone" filled />
+                            </div>
+                            <div class="text-edit-block__button">
+                                <nuxt-icon name="reused/CalendarBlank" filled />
+                            </div>
+                            <div class="text-edit-block__button">
+                                <nuxt-icon name="reused/Clock" filled />
+                            </div>
+                            <div class="text-edit-block__button">
+                                <nuxt-icon name="reused/Megaphone" filled />
+                            </div>
+                            <div class="text-edit-block__button">
+                                *1
+                            </div>
+                            <div class="text-edit-block__button">
+                                *2
+                            </div>
+                            <div class="text-edit-block__button">
+                                *3
+                            </div>
+                            <div class="text-edit-block__button">
+                                *4
+                            </div>
+                            <div class="text-edit-block__button">
+                                *5
+                            </div>
+
                         </div>
+                        <div class="text-edit-block__textarea-block">
+                            <textarea v-model="data.text" rows="8" placeholder="Текст sms"></textarea>
+                            <div class="text-edit-block__symbols-count">{{ 67 }} символов / 1 sms</div>
+                        </div>
+
                         <div class="border-line"></div>
                         <ul class="option-list">
                             <li class="option">
-                                <span class="option__text">Поздравлять на День рождения</span>
-                                <Switch class="option__switch" v-model="data.options.option1" />
-                            </li>
-                            <li class="option">
-                                <span class="option__text">Статус клиента (включите, чтобы отправлять SMS)</span>
-                                <Switch class="option__switch" v-model="data.options.option2" />
+                                <span class="option__content">
+                                    <div class="option__title">Включить короткие ссылки</div>
+                                    <div class="option__subtitle">Данная опция добавит в текст СМС сообщения уникальную
+                                        ссылку и Вы сможете отследить кто из получателей данного СМС прошел по этой
+                                        ссылке.
+                                    </div>
+                                </span>
+                                <Switch class="option__switch" v-model="data.options.activateShortLinks" />
                             </li>
                         </ul>
-                        <div class="border-line"></div>
-                        <div class="inputs-grid">
-                            <Input v-model="data.params.param1" :placeholder="'Param 1'" />
-                            <Input v-model="data.params.param2" :placeholder="'Param 2'" />
-                            <Input v-model="data.params.param3" :placeholder="'Param 3'" />
-                            <Input v-model="data.params.param4" :placeholder="'Param 4'" />
-                            <Input v-model="data.params.param5" :placeholder="'Param 5'" />
-                        </div>
-                        <div class="card-control-buttons">
-                            <ButtonSecondary>Отменить</ButtonSecondary>
-                            <Button class="">Создать</Button>
-                        </div>
+                    </div>
+
+                    <div class="card-control-buttons">
+                        <ButtonSecondary>Отменить</ButtonSecondary>
+                        <Button class="">Создать</Button>
+                    </div>
                 </template>
             </card>
         </template>
 
         <template #aside>
-            <SystemTemplatesBadge/>
+            <SystemTemplatesBadge />
         </template>
 
     </WithAsideLayout>
 </template>
 
 <script setup>
+import ActionButton from '~/components/UI/Buttons/ActionButton.vue'
 import ButtonSecondary from '~/components/UI/Buttons/ButtonSecondary.vue'
 import Button from '~/components/UI/Buttons/Button.vue'
 import Switch from '~/components/UI/Switches/Switch.vue'
@@ -63,29 +103,69 @@ import BackButtonWithText from '~/components/UI/Buttons/BackButtonWithText.vue'
 
 
 const data = ref({
-    fio: '',
-    phone: '',
+    title: '',
+    sender: '',
     group: '',
-    birthday: '',
+    sendDateTime: '',
     smsLayout: '',
+    text: '',
     options: {
-        option1: true,
-        options2: false
-    },
-    params: {
-        param1: '',
-        param2: '',
-        param3: '',
-        param4: '',
-        param5: '',
+        activateShortLinks: false
     }
 })
-const phoneNumbers = ref(['+992920000000'])
+const senders = ref(['Sender-1'])
 const groups = ref(['1'])
 const smsLayouts = ref(['1'])
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.text-edit-block {
+    box-shadow: 0 0.25rem 2rem 0 rgba($color: #000000, $alpha: .08);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
+    &__buttons {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &__button {
+        padding: 1rem;
+        border: 1px solid $grey;
+        border-radius: 0.5rem;
+
+        .nuxt-icon {
+            svg {
+                width: 1.125rem;
+                height: 1.125rem;
+            }
+        }
+    }
+
+    &__textarea-block {
+        textarea {
+            width: 100%;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            background-color: #EFF0F6;
+            color: #6E7191;
+            font-size: 0.9375rem;
+            letter-spacing: 0.046875rem;
+            font-family: $font-family-poppins;
+        }
+    }
+
+    &__symbols-count {
+        margin-top: 0.5rem;
+
+        color: #6E7191;
+        font-family: $font-family-poppins;
+        font-size: 0.8125rem;
+        letter-spacing: 0.015625rem;
+    }
+}
 </style>

@@ -2,16 +2,15 @@
   <div class="input-field">
     <ClientOnly>
       <input required ref="input" v-maska data-maska="+992 (##) ###-##-##" :type="type" :value="modelValue" :disabled="disabled"
-        @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone"/>
+        @input="$emit('update:modelValue', $event.target.value)" v-if="isPhone" />
         
       <input required ref="input" @focus="isFocused = true" @blur="isFocused = false"
-      :type="type === 'date' ? (isFocused || modelValue?.length > 0 ? 'date' : 'text') : type" :value="modelValue" :disabled="disabled"
+      :type="type?.includes('date') ? (isFocused || modelValue?.length > 0 ? type : 'text') : type" :value="modelValue" :disabled="disabled"
         @input="$emit('update:modelValue', $event.target.value)" v-else />
-  
     </ClientOnly>
     <!-- <nuxt-icon class="input-field__icon" name="reused/CalendarBlank" filled @click="$refs.input.focus(); $refs.input.click()" v-if="type === 'date'" /> -->
     <label>{{ placeholder }}</label>
-    <button @click="clearInput" v-if="modelValue !== '' && type !== 'date'">
+    <button @click="clearInput" v-if="modelValue !== '' && !type?.includes('date')">
       <nuxt-icon name="reused/Close" filled />
     </button>
   </div>
@@ -67,7 +66,8 @@ const clearInput = () => {
     font-weight: $fw-semibold;
     color: $dark-blue;
 
-    &[type="date"]::-webkit-calendar-picker-indicator {
+    &[type="date"]::-webkit-calendar-picker-indicator,
+    &[type="datetime-local"]::-webkit-calendar-picker-indicator {
       color: rgba(0, 0, 0, 0);
       opacity: 1;
       display: block;
