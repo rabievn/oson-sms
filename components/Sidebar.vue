@@ -49,7 +49,7 @@ const routes = [
         icon: 'Users'
     },
     {
-        path: '/layouts',
+        path: '/templates',
         title: 'Шаблоны рассылок',
         icon: 'Star'
     },
