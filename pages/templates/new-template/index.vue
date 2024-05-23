@@ -55,10 +55,8 @@
                             </div>
 
                         </div>
-                        <div class="text-edit-block__textarea-block">
-                            <textarea v-model="data.text" rows="8" placeholder="Текст sms"></textarea>
-                            <div class="text-edit-block__symbols-count">{{ 67 }} символов / 1 sms</div>
-                        </div>
+
+                        <Textarea v-model="data.text"/>
 
                         <div class="border-line"></div>
                         <ul class="option-list">
@@ -100,7 +98,7 @@ import Input from '~/components/UI/Inputs/Input.vue'
 import WithAsideLayout from "~/layouts/withAsideLayout.vue"
 import SystemTemplatesBadge from '~/components/badges/SystemTemplatesBadge.vue'
 import BackButtonWithText from '~/components/UI/Buttons/BackButtonWithText.vue'
-
+import Textarea from '~/components/UI/Textareas/Textarea.vue'
 
 const data = ref({
     title: '',
@@ -144,28 +142,6 @@ const smsLayouts = ref(['1'])
                 height: 1.125rem;
             }
         }
-    }
-
-    &__textarea-block {
-        textarea {
-            width: 100%;
-            border-radius: 1rem;
-            padding: 1.25rem;
-            background-color: #EFF0F6;
-            color: #6E7191;
-            font-size: 0.9375rem;
-            letter-spacing: 0.046875rem;
-            font-family: $font-family-poppins;
-        }
-    }
-
-    &__symbols-count {
-        margin-top: 0.5rem;
-
-        color: #6E7191;
-        font-family: $font-family-poppins;
-        font-size: 0.8125rem;
-        letter-spacing: 0.015625rem;
     }
 }
 </style>
