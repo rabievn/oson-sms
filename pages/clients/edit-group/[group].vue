@@ -18,7 +18,7 @@
                             <nuxt-icon filled name="clients/UserPlus" />
                         </action-button>
                         <action-button disabled>
-                            <nuxt-icon filled name="clients/Trash" />
+                            <nuxt-icon filled name="reused/Trash" />
                         </action-button>
                         <action-button disabled>
                             <nuxt-icon filled name="clients/UsersThree" />
