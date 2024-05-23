@@ -132,14 +132,15 @@ const smsLayouts = ref(['1'])
     }
 
     &__button {
-        padding: 1rem;
+        padding: 0.9375rem;
         border: 1px solid $grey;
         border-radius: 0.5rem;
 
         .nuxt-icon {
-            svg {
-                width: 1.125rem;
-                height: 1.125rem;
+            svg, path {
+                width: 1.2rem;
+                height: 1.2rem;
+                stroke: $secondary-black;
             }
         }
     }

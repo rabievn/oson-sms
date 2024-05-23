@@ -1,38 +1,36 @@
 //COLORS============================================================================================================//
 
-$main-dark: #1B2559;
-$dark-grey: #A4A9AF;
-$white: #FFFFFF;
-$back: #F4F7FE;
-$yellow: #FFB700;
-$grey: #EAEDF0;
-$secondary-black: #5E6D84;
-$green: #38B000;
-$red: #DC2F02;
+$main-dark: #1b2559;
+$dark-grey: #a4a9af;
+$white: #ffffff;
+$back: #f4f7fe;
+$yellow: #ffb700;
+$grey: #eaedf0;
+$secondary-black: #5e6d84;
+$green: #38b000;
+$red: #dc2f02;
 $black: #000000;
 $brown-black: #212121;
 
-$blue-grey: #6E7191;
-$dark-blue: #14142B;
+$blue-grey: #6e7191;
+$dark-blue: #14142b;
 $secondary-dark-blue: #101634;
-$blue: #1F3FE2;
-$light-grey: #EFF0F6;
-$light-blue: #38B2F8;
-$purple: #7B61FF;
-$violet: #9747FF;
-$golden-yellow: #EBC232;
-$orange-red: #F4743B;
-$orange-yellow: #F4743B;
-$off-white: #F9F9F9;
-
-
+$blue: #1f3fe2;
+$light-grey: #eff0f6;
+$light-blue: #38b2f8;
+$purple: #7b61ff;
+$violet: #9747ff;
+$golden-yellow: #ebc232;
+$orange-red: #f4743b;
+$orange-yellow: #f4743b;
+$off-white: #f9f9f9;
 
 //FONT============================================================================================================//
 
 $font-xsm: 0.75rem; // 12px
-$font-sm: 0.875rem; // 14px 
-$font-md: 1rem; // 16px 
-$font-xl: 1.5rem; // 24px 
+$font-sm: 0.875rem; // 14px
+$font-md: 1rem; // 16px
+$font-xl: 1.5rem; // 24px
 
 $font-family-main: "Manrope", sans-serif;
 $font-family-poppins: "Poppins", "Manrope", sans-serif;
@@ -52,3 +50,9 @@ $transition-1: all 0.2s ease;
 $border: 1px solid $grey;
 
 //SHADOWS============================================================================================================//
+
+.nuxt-icon {
+  svg {
+    margin: 0;
+  }
+}
