@@ -9,7 +9,8 @@
       <template #main>
 
         <Table :is-checkbox-exist="false" :items="smsTable" :headers="headers"/>
-
+        <div class="border-line"></div>
+        <Pagination common-pages="24"/>
       </template>
     </card>
     <template #aside>
@@ -26,6 +27,7 @@ import PieChart from "~/components/charts/PieChart.vue";
 import SmsCountChart from "~/components/charts/SMSCountChart.vue";
 import Table from "~/components/UI/Tables/Table.vue";
 import LinesCount from "~/components/UI/Selects/LinesCount.vue";
+import Pagination from "~/components/UI/Paginations/Pagination.vue";
 
 const headers = [
   'Дата и время',
