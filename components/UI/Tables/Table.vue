@@ -72,6 +72,9 @@ defineProps({
   &__bodyData {
     padding-block: 0.75rem;
     color: $secondary-black;
+    max-width: 24.3125rem;
+
+    vertical-align: center;
   }
 }
 
