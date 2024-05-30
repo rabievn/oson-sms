@@ -15,7 +15,9 @@
       </td>
       <td class="table__bodyData" v-for="(value, key) in item" :key="key">
         <Switch class="table__bodySwitcher" v-if="typeof value === 'boolean'" v-model="item[key]"/>
-        <span class="table__bodyValue" v-else>{{ value }}</span>
+        <span
+            :class="`table__bodyValue ${value === 'В процессе' && 'yellow'} ${value === 'Завершена' && 'green'} ${value === 'Ошибка' && 'red'}`"
+            v-else>{{ value }}</span>
       </td>
     </tr>
     </tbody>
@@ -45,6 +47,18 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+.yellow {
+  color: $yellow;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
+
 .table {
   width: 100%;
   text-align: left;
@@ -73,9 +87,17 @@ defineProps({
     padding-block: 0.75rem;
     color: $secondary-black;
     max-width: 24.3125rem;
-
     vertical-align: center;
   }
+
+  &__bodyValue {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
+
 }
 
 </style>
