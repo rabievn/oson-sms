@@ -1,56 +1,48 @@
 <template>
   <div class="lines-count">
-    <Dropdown >
-      <template #header>
-        <button  class="dropdown-toggle">{{ selected }}</button>
-      </template>
-      <template #menu>
-        <div
-            class="dropdown-item"
-            v-for="item in items"
-            :key="item"
-            @click="selectItem(item)"
-        >
-          Строк: {{ item }}
+    <Dropdown>
+      <template #button>
+        <div>
+          Строк: {{ selectedRowCount }}
         </div>
+      </template>
+      <template #header>
+        <div>
+          Количество строк
+        </div>
+      </template>
+      <template #default>
+          <div v-for="count in rowCounts" :key="count" @click="selectRowCount(count)">
+            {{ count }} строк
+          </div>
       </template>
     </Dropdown>
   </div>
 </template>
 
 <script setup>
-import Dropdown from '~/components/UI/DropDowns/Dropdown.vue';
+import {ref} from 'vue';
+import Dropdown from "~/components/UI/Dropdowns/Dropdown.vue"
 
-const items = [20, 50, 80, 100];
-const selected = ref('Строк: 20');
+const props = defineProps({
+  header: {
+    type: String,
+    required: false
+  },
+  main: {
+    type: Object,
+    required: true
+  }
+})
 
-const selectItem = (item) => {
-  selected.value = `Строк: ${item}`;
-};
+const selectedRowCount = ref(20);
+const rowCounts = [20, 50, 80, 100];
+
+const selectRowCount = (count) => {
+  selectedRowCount.value = count;
+}
 </script>
 
-<style scoped lang="scss">
-.lines-count {
-  position: relative;
-}
+<style lang="scss" scoped>
 
-.dropdown-toggle {
-  padding-inline: 1rem;
-  padding-block: 0.660rem;
-  font-size: 1rem; // 16px
-  font-weight: 400; // normal
-  border: 0.125rem solid #ccc;
-  border-radius: 0.5rem;
-  background-color: white;
-  cursor: pointer;
-}
-
-.dropdown-item {
-  padding: 0.625rem; // 10px to rem
-  cursor: pointer;
-
-  &:hover {
-    background-color: #f1f1f1;
-  }
-}
 </style>

@@ -22,7 +22,6 @@
             <action-button disabled>
               <nuxt-icon filled name="clients/UsersThree"/>
             </action-button>
-            <lines-count />
           </div>
         </template>
         <template #main>
@@ -49,7 +48,6 @@ import ActionButton from "~/components/UI/Buttons/ActionButton.vue";
 import Search from "~/components/UI/Searches/Search.vue";
 import Table from "~/components/UI/Tables/Table.vue";
 import Pagination from "~/components/UI/Paginations/Pagination.vue";
-import LinesCount from "~/components/UI/Selects/LinesCount.vue";
 import ClientGroupsBadge from '~/components/badges/ClientGroupsBadge.vue';
 
 const searchValue = ref("")
