@@ -3,6 +3,7 @@
     <div class="dropdown" :class="{ open: isOpen }">
       <button class="dropdown__button" @click.stop="toggleDropdown">
         <slot name="button"/>
+        <nuxt-icon name="reused/Arrow" filled/>
       </button>
       <div
           class="overlay"
@@ -47,6 +48,12 @@ onBeforeUnmount(() => {
 });
 </script>
 
+<style lang="scss">
+.dropdown__button .nuxt-icon svg {
+  width: 0.625rem;
+  height: 0.3125rem;
+}
+</style>
 <style lang="scss" scoped>
 .dropdown {
   position: relative;
@@ -54,14 +61,19 @@ onBeforeUnmount(() => {
   z-index: 2;
 
   &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     cursor: pointer;
     padding-inline: 1rem;
     padding-block: 0.65625rem;
     background-color: $white;
     border: 0.125rem solid $grey;
     border-radius: 0.5rem;
+    font-weight: $fw-medium;
+    font-size: $font-sm;
+    color: $main-dark;
   }
-
 
   &__main {
     display: none;
@@ -80,7 +92,7 @@ onBeforeUnmount(() => {
     letter-spacing: -2%;
     color: $main-dark;
     padding-bottom: 1rem;
-    border-bottom: 1px solid $grey;
+    border-bottom: 0.0625rem solid $grey;
     margin-bottom: 1rem;
     font-size: $font-md;
   }

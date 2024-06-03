@@ -21,7 +21,6 @@
 </template>
 
 <script setup>
-import {ref} from 'vue';
 import Dropdown from "~/components/UI/Dropdowns/Dropdown.vue"
 
 const props = defineProps({
