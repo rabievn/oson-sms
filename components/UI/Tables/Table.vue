@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody class="table__body">
-    <tr class="table__bodyRow" v-for="(item, index) in items" :key="index">
+    <tr class="table__bodyRow" v-for="(item, index) in items" :key="index" @click="$router.push(`${path}/${index}`)">
       <td v-show="isCheckboxExist" class="table__headCell">
         <Checkbox/>
       </td>
@@ -41,6 +41,14 @@ defineProps({
     type: Boolean,
     required: false
   },
+  route: {
+    type: Boolean,
+    required: false
+  },
+  path: {
+    type: String,
+    required: false
+  }
 })
 
 

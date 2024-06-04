@@ -7,8 +7,7 @@
         <LinesCount/>
       </template>
       <template #main>
-
-        <Table :is-checkbox-exist="false" :items="smsTable" :headers="headers"/>
+        <Table :is-checkbox-exist="false" :items="smsTable" :headers="headers" path="/history" :is-route-exist="true"/>
         <div class="border-line"></div>
         <Pagination common-pages="24"/>
       </template>
