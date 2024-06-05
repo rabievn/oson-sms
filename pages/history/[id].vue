@@ -19,7 +19,7 @@
       </template>
     </card>
     <template #aside>
-      <pie-chart class="charts__chart pie-chart" :title="'SMS  по статусам'" :parts="statusChartData"/>
+      <pie-chart class="charts__chart pie-chart" :title="'Статус рассылки'" :parts="statusChartData"/>
     </template>
   </WithAsideLayout>
 </template>
@@ -31,21 +31,22 @@ import PieChart from "~/components/charts/PieChart.vue";
 
 const statusChartData = [
   {
-    label: 'Доставлено',
-    series: 110,
-    color: '#38B000'
+    label: 'Успешно',
+    series: 420,
+    color: '#38b000'
   },
   {
-    label: 'Не доставлено',
-    series: 40,
-    color: '#EAEDF0'
+    label: 'В очереди',
+    series: 33,
+    color: '#56CCF2'
   },
   {
     label: 'Ошибка',
-    series: 40,
-    color: '#F4743B'
+    series: 5,
+    color: '#dc2f02'
   }
-]
+];
+
 </script>
 
 <style lang="scss" scoped>

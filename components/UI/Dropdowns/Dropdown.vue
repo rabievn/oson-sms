@@ -60,6 +60,7 @@ onBeforeUnmount(() => {
   display: inline-block;
   z-index: 2;
 
+
   &__button {
     display: flex;
     align-items: center;

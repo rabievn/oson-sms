@@ -43,5 +43,4 @@ const selectRowCount = (count) => {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
