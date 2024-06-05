@@ -38,7 +38,7 @@
     </card>
     <card>
       <template #header>
-        <div>
+        <div class="buttonBlock__headerText">
           Детально
         </div>
         <div>
@@ -46,7 +46,9 @@
         </div>
       </template>
       <template #main>
-        123
+        <Table :is-checkbox-exist="false" :items="detailTable" :headers="headers"/>
+        <div class="border-line"></div>
+        <Pagination common-pages="24"/>
       </template>
     </card>
     <template #aside>
@@ -63,6 +65,8 @@ import Input from "~/components/UI/Inputs/Input.vue";
 import Textarea from "~/components/UI/Textareas/Textarea.vue";
 import GreenButton from "~/components/UI/Buttons/GreenButton.vue";
 import LinesCount from "~/components/UI/Selects/LinesCount.vue";
+import Table from "~/components/UI/Tables/Table.vue";
+import Pagination from "~/components/UI/Paginations/Pagination.vue";
 
 const statusChartData = [
   {
@@ -93,6 +97,69 @@ const formData = ref({
   secondSmsSender: 'RASIN SUGHD',
   amount: '25,55 с.'
 });
+
+
+const headers = [
+  '#',
+  '№ телефона',
+  'Дата отправки',
+  '№ Статус',
+  'Код ошибки',
+];
+
+const detailTable = [
+  {
+    id: 1,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Отправлен",
+    codeError: "-",
+  },
+  {
+    id: 2,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Отправлен",
+    codeError: "-",
+  },
+  {
+    id: 3,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Отправлен",
+    codeError: "-",
+  },
+  {
+    id: 4,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Ошибка",
+    codeError: "-",
+  },
+  {
+    id: 5,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Отправлен",
+    codeError: "-",
+  },
+  {
+    id: 6,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Отправлен",
+    codeError: "-",
+  },
+  {
+    id: 7,
+    phoneNumber: "929007777",
+    date: "01.10.2023-14:12:44",
+    status: "Отправлен",
+    codeError: "-",
+  },
+];
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -139,7 +206,10 @@ const formData = ref({
       max-width: 27.4375rem;
     }
   }
+}
 
-
+.buttonBlock__headerText {
+  font-weight: $fw-bold;
+  font-size: $font-xl;
 }
 </style>

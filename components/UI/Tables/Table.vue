@@ -16,7 +16,7 @@
       <td class="table__bodyData" v-for="(value, key) in item" :key="key">
         <Switch class="table__bodySwitcher" v-if="typeof value === 'boolean'" v-model="item[key]"/>
         <span
-            :class="`table__bodyValue ${value === 'В процессе' && 'yellow' || value === 'Отправлен' && 'yellow'} ${value === 'Завершена' && 'green'} ${value === 'Ошибка' && 'red'}`"
+            :class="`table__bodyValue ${value === 'В процессе' && 'yellow' || value === 'Отправлен' && 'green'} ${value === 'Завершена' && 'green'} ${value === 'Ошибка' && 'red'}`"
             v-else>{{ value }}</span>
       </td>
     </tr>
