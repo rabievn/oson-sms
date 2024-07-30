@@ -36,3 +36,7 @@ npm run preview
 ## Versions
 
 node 20.12.1
+
+##Netlify
+
+https://oson-sms-desktop.netlify.app/
